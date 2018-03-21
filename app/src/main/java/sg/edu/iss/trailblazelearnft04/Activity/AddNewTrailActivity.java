@@ -136,11 +136,11 @@ public class AddNewTrailActivity extends AppCompatActivity {
         trailId=tv_date.getText().toString()+"-"+name;
 
         if(TextUtils.isEmpty(tv_name.getText().toString().trim())){
-            tv_name.setError("please fill in the trail name");
+            tv_name.setError("Please enter the trail name");
             isValid=false;
         }
         if(TextUtils.isEmpty(tv_date.getText().toString().trim())){
-            tv_date.setError("please select a date");
+            tv_date.setError("Please select a date");
             isValid=false;
         }
         for (String id : existingTrailId) {
@@ -148,7 +148,7 @@ public class AddNewTrailActivity extends AppCompatActivity {
                 if (trailId.equals(oldTrailId)){
                     break;
                 } else {
-                    tv_name.setError("This trail id has already existed!");
+                    tv_name.setError("This trail id already exists!");
                     isValid = false;
                     break;
                 }

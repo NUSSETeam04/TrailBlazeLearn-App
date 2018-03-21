@@ -86,6 +86,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:text="@string/save" />
 
     </RelativeLayout>

@@ -140,7 +140,7 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
         builder.setTitle("Delete");
         builder.setMessage("Are you sure to delete this trail?");
-        builder.setPositiveButton("sure", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -151,7 +151,7 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
             }
         });
 
-        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 

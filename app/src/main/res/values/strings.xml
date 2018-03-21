@@ -25,8 +25,8 @@
     <string name="station_instruction">Instruction</string>
     <string name="add_new_discussion">Post a new discussion..</string>
     <string name="add_new_post">Post your thought..</string>
-    <string name="file">File (photo/audio/pdf/doc)</string>
-    <string name="file_name_sample">My thought.doc</string>
+    <string name="file">File (Photo/Audio/Pdf/Doc)</string>
+    <string name="file_name_sample">(Eg. My thought.doc)</string>
     <string name="choose_file">Choose file</string>
     <string name="description">Description</string>
     <string name="tab_info">Info</string>

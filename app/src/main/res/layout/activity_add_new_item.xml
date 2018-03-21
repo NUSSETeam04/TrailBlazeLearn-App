@@ -17,8 +17,9 @@
             android:id="@+id/tv_file"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
             android:text="@string/file"
-            android:layout_marginBottom="15dp"/>
+            android:textSize="18sp" />
 
 
         <Button
@@ -51,12 +52,14 @@
             android:layout_height="200dp"
             android:visibility="gone"
             android:layout_below="@id/btn_choose_file"/>
+
         <TextView
             android:id="@+id/tv_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/imageview"
-            android:text="@string/description" />
+            android:text="@string/description"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/et_description"
@@ -82,6 +85,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/white"
             android:text="@string/save" />
 
     </RelativeLayout>

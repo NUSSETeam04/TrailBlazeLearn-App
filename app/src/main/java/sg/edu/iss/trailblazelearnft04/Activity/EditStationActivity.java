@@ -43,7 +43,7 @@ public class EditStationActivity extends AppCompatActivity {
     private TextView tvEmptyStationList;
     private GoogleSignInClient mGoogleSignInClient;
     private String uid = getUid();
-
+    private String key;
     private Intent intent;
     private StationHelperDao stationHelperDao;
     private ArrayList<Station> stationList = new ArrayList<Station>();
@@ -64,7 +64,7 @@ public class EditStationActivity extends AppCompatActivity {
 
 
         intent = getIntent();
-        final String key = intent.getStringExtra("key");
+        key = intent.getStringExtra("key");
 
         stationListAdapter = new StationListAdapter(stationList, true, key, null);
         rvStationList.setAdapter(stationListAdapter);
@@ -124,5 +124,10 @@ public class EditStationActivity extends AppCompatActivity {
         startActivity(new Intent(EditStationActivity.this, MainActivity.class));
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        stationHelperDao.getStationListForTrainer(key, rvStationList, stationListAdapter, tvEmptyStationList);
+    }
 
 }

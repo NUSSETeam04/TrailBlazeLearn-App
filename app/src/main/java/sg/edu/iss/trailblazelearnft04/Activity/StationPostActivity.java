@@ -83,8 +83,13 @@ public class StationPostActivity extends AppCompatActivity {
                 String post = etNewPost.getText().toString();
                 Date date = new Date(System.currentTimeMillis());
                 String postTimestamp = formatter.format(date);
-                stationPostHelperDao.addNewPost(discussionId, uid, post, postTimestamp);
-                etNewPost.setText("");
+
+                if (post.isEmpty()){
+                    etNewPost.setError("Say something");
+                } else {
+                    stationPostHelperDao.addNewPost(discussionId, uid, post, postTimestamp);
+                    etNewPost.setText("");
+                }
 
             }
         });

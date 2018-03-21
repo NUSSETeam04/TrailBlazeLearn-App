@@ -35,7 +35,7 @@ public class SelectModeActivity extends AppCompatActivity implements View.OnClic
     private Button button;
     private String select;
     private GoogleSignInClient mGoogleSignInClient;
-    private static final String[] mode = {"Trainer", "Participant"};
+    private static final String[] mode = {"Select Mode", "Trainer", "Participant"};
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -121,6 +121,8 @@ public class SelectModeActivity extends AppCompatActivity implements View.OnClic
             startActivity(i);
         } else if (select == "Participant") {
             startActivity(new Intent(SelectModeActivity.this, ParticipantTrailActivity.class));
+        } else {
+
         }
     }
 
