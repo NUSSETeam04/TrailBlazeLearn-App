@@ -171,6 +171,8 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
                     System.out.println("location:"+station.getAddress());
                     intent.putExtra("instructions",station.getInstructions());
                     intent.putExtra("stationKey",station.getStationKey());
+                    intent.putExtra("lati",station.getGps().get("latitude"));
+                    intent.putExtra("longi",station.getGps().get("longitude"));
                     intent.putExtra("key",key);
 
                     context.startActivity(intent);

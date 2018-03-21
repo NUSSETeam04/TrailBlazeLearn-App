@@ -30,14 +30,16 @@ public class AddNewStationActivity extends AppCompatActivity {
     private TextView tv_stationLocation;
     private EditText et_instruction;
     private int flag;
-    private String stationName, location, instructions, address;
+    private String stationName, instructions, address;
     private Intent intent;
     private GoogleMap map;
     private int PLACE_PICKER_REQUEST;
     private Place place;
     private PlacePicker.IntentBuilder builder;
     private LatLng gps;
+    private double lati,longi;
     private StationHelperDao stationHelperDao;
+    HashMap<String, Double> location = new HashMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +61,14 @@ public class AddNewStationActivity extends AppCompatActivity {
         } else if (flag == 1) {
             this.setTitle(R.string.title_edit_station);
             stationName = intent.getStringExtra("stationName");
-            location = intent.getStringExtra("location");
+            address = intent.getStringExtra("location");
             instructions = intent.getStringExtra("instructions");
+            lati = intent.getDoubleExtra("lati",0.0);
+            longi = intent.getDoubleExtra("longi",0.0);
+            location.put("latitude",lati);
+            location.put("longitude",longi);
             et_stationName.setText(stationName);
-            tv_stationLocation.setText(location);
+            tv_stationLocation.setText(address);
             et_instruction.setText(instructions);
         }
 
@@ -112,9 +118,6 @@ public class AddNewStationActivity extends AppCompatActivity {
         if (flag == 1) {
             String key = getTrailKey();
             String stationKey = intent.getStringExtra("stationKey");
-            HashMap<String, Double> location = new HashMap<>();
-            location.put("latitude", gps.latitude);
-            location.put("longitude", gps.longitude);
             stationHelperDao = new StationHelperDao();
             stationHelperDao.updateStation(key, stationKey, et_stationName.getText().toString(), location, address, et_instruction.getText().toString());
         }
