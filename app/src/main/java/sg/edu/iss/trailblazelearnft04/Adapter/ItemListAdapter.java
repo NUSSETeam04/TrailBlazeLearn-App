@@ -71,41 +71,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
                     Log.i("tag pa",localFile_path);
                     final File localFile = new File(localFile_path);
                     if(!localFile.exists()) {
-                        /*
-                        FirebaseStorage storage = FirebaseStorage.getInstance();
-                        StorageReference storageRef = storage.getReferenceFromUrl(ContributedItem_FirebaseURL);
-
-                        storageRef.getFile(localFile).addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
-                            @Override
-                            public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
-                                // Successfully downloaded data to local file
-                                String ArgFileType;
-                                if (ContributedItem_Type.equals("image")) {
-                                    ArgFileType = "image/*";
-                                } else if (ContributedItem_Type.equals("audio")) {
-                                    ArgFileType = "audio/*";
-                                } else if (ContributedItem_Type.equals("pdf")) {
-                                    ArgFileType = "application/pdf";
-                                } else if (ContributedItem_Type.equals("doc")) {
-                                    ArgFileType = "application/msword";
-                                } else {
-                                    ArgFileType = "image/*";
-                                }
-
-                                Intent intent = new Intent(Intent.ACTION_VIEW);
-                                intent.setDataAndType(Uri.fromFile(localFile), ArgFileType);
-                                intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                                context.startActivity(intent);
-
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception exception) {
-                                // Handle failed download
-                                // ...
-                            }
-                        });
-                        */
 
                         new DownloadFileTask().execute(localFile_path);
                     } else {

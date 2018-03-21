@@ -97,7 +97,7 @@ public class TrailHelperDao {
 
     public void deleteTrail(Trail trail, final String uid) {
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
-        String trailId = trail.trailId;
+        String trailId = trail.getTrailId();
         final Query query=ref.child("trails").orderByChild("trailId").equalTo(trailId);
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -152,7 +152,7 @@ public class TrailHelperDao {
                 existingTrailId.clear();
                 for (DataSnapshot ContributedItemSnapshot : dataSnapshot.getChildren()) {
                     Trail trail = ContributedItemSnapshot.getValue(Trail.class);
-                    existingTrailId.add(trail.trailId);
+                    existingTrailId.add(trail.getTrailId());
                 }
             }
 

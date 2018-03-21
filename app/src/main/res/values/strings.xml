@@ -36,6 +36,7 @@
     <string name="menu_log_out">Log out</string>
     <string name="menu_edit">Edit</string>
     <string name="date_format">YYYYMMDD</string>
+    <string name="input_trail_id">Input Trail Id</string>
 
     <string name="facebook_app_id">804494209740005</string>
     <string name="fb_login_protocol_scheme">453f92f73da15a608c31c646f1a62953</string>

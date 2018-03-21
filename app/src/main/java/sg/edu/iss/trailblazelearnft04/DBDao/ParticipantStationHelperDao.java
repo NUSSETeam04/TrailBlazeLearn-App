@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class ParticipantStationHelperDao {
     private DatabaseReference mDatabase;
-
+    //to get participant list for a participant
     public void getStationListForParticipant(final String key, final RecyclerView rvStationList, final ParticipantStationListAdapter stationListAdapter,
                                              final TextView tvEmptyStationList) {
         mDatabase= FirebaseDatabase.getInstance().getReference("stations");
