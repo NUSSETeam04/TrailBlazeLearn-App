@@ -82,8 +82,12 @@ public class StationDiscussionFragment extends Fragment {
                 Date date = new Date(System.currentTimeMillis());
                 String discussionTimestamp = formatter.format(date);
 
-                stationDiscussionHelperDao.addNewDiscussion(stationId, uid, topic, discussionTimestamp);
-                etNewDiscussion.setText("");
+                if (topic.isEmpty()){
+                    etNewDiscussion.setError("Say something");
+                } else {
+                    stationDiscussionHelperDao.addNewDiscussion(stationId, uid, topic, discussionTimestamp);
+                    etNewDiscussion.setText("");
+                }
             }
         });
 

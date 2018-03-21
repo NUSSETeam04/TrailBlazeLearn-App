@@ -65,9 +65,9 @@ public class InputTrailIdActivity extends AppCompatActivity {
                             }
                             if (dataSnapshot.getChildrenCount() == 0) {
                                 AlertDialog.Builder builder=new AlertDialog.Builder(context);
-                                builder.setTitle("Wrong trailId");
-                                builder.setMessage("This trailId doesn't exist");
-                                builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                builder.setTitle("Invalid trailId");
+                                builder.setMessage("This trail Id doesn't exist");
+                                builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
 
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
@@ -76,7 +76,7 @@ public class InputTrailIdActivity extends AppCompatActivity {
                                     }
                                 });
 
-                                builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
 
@@ -106,7 +106,7 @@ public class InputTrailIdActivity extends AppCompatActivity {
     public boolean isValid(){
         boolean isValid=true;
         if(TextUtils.isEmpty(inputId.getText().toString().trim())){
-            inputId.setError("please fill in the name");
+            inputId.setError("Please input the trail id");
             isValid=false;
         }
         return isValid;

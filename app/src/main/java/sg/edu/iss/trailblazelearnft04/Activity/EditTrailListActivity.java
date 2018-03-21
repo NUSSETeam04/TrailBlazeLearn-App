@@ -110,4 +110,10 @@ public class EditTrailListActivity extends AppCompatActivity {
 
         startActivity(new Intent(EditTrailListActivity.this, MainActivity.class));
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        trailHelperDao.getTrailsForTrainer(uid, rvTrailList, trailListAdapter, tvEmptyTrailList);
+    }
 }
