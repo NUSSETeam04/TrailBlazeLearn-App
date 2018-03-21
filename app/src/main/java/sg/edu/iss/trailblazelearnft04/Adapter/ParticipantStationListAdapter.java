@@ -15,6 +15,8 @@ import android.widget.TextView;
 import sg.edu.iss.trailblazelearnft04.Activity.StationDetailActivity;
 import sg.edu.iss.trailblazelearnft04.Model.Station;
 import sg.edu.iss.trailblazelearnft04.R;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -101,8 +103,9 @@ public class ParticipantStationListAdapter extends RecyclerView.Adapter<Particip
 
         Station station=myDataSet.get(position);
         String stationkey=station.getStationKey();
-        DatabaseReference ref=FirebaseDatabase.getInstance().getReference("items");
-        ref.child(stationkey).addListenerForSingleValueEvent(new ValueEventListener() {
+        String uid= FirebaseAuth.getInstance().getUid();
+        DatabaseReference ref=FirebaseDatabase.getInstance().getReference("participant-items");
+        ref.child(uid).child(stationkey).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.getChildrenCount()!=0)
@@ -118,12 +121,6 @@ public class ParticipantStationListAdapter extends RecyclerView.Adapter<Particip
 
             }
         });
-
-//        if (position % 2 == 0) {
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//                viewHolder.ivUploaded.setImageDrawable(res.getDrawable(android.R.drawable.checkbox_on_background, null));
-//            }
-//        }
 
     }
 

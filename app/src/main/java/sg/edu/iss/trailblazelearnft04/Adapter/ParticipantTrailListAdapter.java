@@ -68,10 +68,10 @@ public class ParticipantTrailListAdapter extends RecyclerView.Adapter<Participan
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder,final int position) {
-        viewHolder.tvTrailName.setText(myDataSet.get(position).trailName);
-        trailId=myDataSet.get(position).trailDate+"-"+myDataSet.get(position).trailName;
+        viewHolder.tvTrailName.setText(myDataSet.get(position).getTrailName());
+        trailId=myDataSet.get(position).getTrailDate()+"-"+myDataSet.get(position).getTrailName();
         viewHolder.tvTrailId.setText(trailId);
-        viewHolder.tvTrailDate.setText(myDataSet.get(position).trailDate);
+        viewHolder.tvTrailDate.setText(myDataSet.get(position).getTrailDate());
         final Context context = viewHolder.itemView.getContext();
 
 
@@ -83,7 +83,7 @@ public class ParticipantTrailListAdapter extends RecyclerView.Adapter<Participan
                     final Context context = v.getContext();
                     trail=myDataSet.get(position);
                     Intent intent = new Intent(context, ParticipantStationListActivity.class);
-                    intent.putExtra("key",trail.key);
+                    intent.putExtra("key",trail.getKey());
                     context.startActivity(intent);
                 }
             });

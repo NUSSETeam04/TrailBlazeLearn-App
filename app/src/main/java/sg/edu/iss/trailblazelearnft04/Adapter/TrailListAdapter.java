@@ -76,10 +76,10 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
-        viewHolder.tvTrailName.setText(myDataSet.get(position).trailName);
-        trailId=myDataSet.get(position).trailDate+"-"+myDataSet.get(position).trailName;
+        viewHolder.tvTrailName.setText(myDataSet.get(position).getTrailName());
+        trailId=myDataSet.get(position).getTrailDate()+"-"+myDataSet.get(position).getTrailName();
         viewHolder.tvTrailId.setText(trailId);
-        viewHolder.tvTrailDate.setText(myDataSet.get(position).trailDate);
+        viewHolder.tvTrailDate.setText(myDataSet.get(position).getTrailDate());
         final Context context = viewHolder.itemView.getContext();
         if (editable){
             ImageButton btnDeleteTrail = (ImageButton) viewHolder.itemView.findViewById(R.id.btn_delete_trail);
@@ -103,10 +103,10 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
                     //intent.putExtra("trailId",key[0]);
 
                     intent.putExtra("flag",1);
-                    intent.putExtra("trailName",trail.trailName);
-                    intent.putExtra("trailDate",trail.trailDate);
-                    intent.putExtra("timestamp",trail.timestamp);
-                    intent.putExtra("key",trail.key);
+                    intent.putExtra("trailName",trail.getTrailName());
+                    intent.putExtra("trailDate",trail.getTrailDate());
+                    intent.putExtra("timestamp",trail.getTimestamp());
+                    intent.putExtra("key",trail.getKey());
                     //intent.putExtra("trailId",trail.trailDate+"-"+trail.trailName);
                     context.startActivity(intent);
 
@@ -123,7 +123,7 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
                     final Context context = v.getContext();
                     trail = myDataSet.get(position);
                     Intent intent = new Intent(context, StationListActivity.class);
-                    intent.putExtra("key",trail.key);
+                    intent.putExtra("key",trail.getKey());
                     context.startActivity(intent);
                 }
             });

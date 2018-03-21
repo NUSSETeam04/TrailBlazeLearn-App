@@ -62,9 +62,6 @@ public class AddNewItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        // StrictMode.setVmPolicy(builder.build());
-
         this.setTitle(R.string.title_new_item);
         setContentView(R.layout.activity_add_new_item);
 
@@ -95,18 +92,9 @@ public class AddNewItemActivity extends AppCompatActivity {
         btnChooseFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            //show popwindow to choose file
                 show(v);
-//                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-//                intent.setType("*/*");
-//                String[] mimetypes = {"image/*", "audio/*", "application/pdf", "application/msword"};
-//                intent.putExtra(Intent.EXTRA_MIME_TYPES, mimetypes);
-//                intent.addCategory(Intent.CATEGORY_OPENABLE);
-//                try {
-//                    startActivityForResult(Intent.createChooser(intent, "Select a File to Upload"), 1001);
-//                } catch (android.content.ActivityNotFoundException ex) {
-//                    // Potentially direct the user to the Market with a Dialog
-//                    System.out.println("No file manager");
-//                }
+
             }
         });
 
@@ -118,16 +106,12 @@ public class AddNewItemActivity extends AppCompatActivity {
         mStorageRef = FirebaseStorage.getInstance().getReference();
         //////////
 
-        // modify this according to context
+
         final String userID = uid;
-        //final String stationID = "-L7XDL5ditoY4_Dr0BWG";
-        //final String userName = "Bob";
         final String stationID=getIntent().getStringExtra("stationId");
         UserHelperDao userhelper=new UserHelperDao();
-        //final String userName= userhelper.get
         Date date=new Date(System.currentTimeMillis());
         final String timeCreation=formatter.format(date);
-        //final String timeCreation = "2018-03-13";
 
         imageview=findViewById(R.id.imageview);
 
@@ -153,41 +137,21 @@ public class AddNewItemActivity extends AppCompatActivity {
                     ci.setDescription(tvDescription.getText().toString());
 
                     ci.setFileURL("NA");
-
+                    //add one more contribute to the items
                     DatabaseReference trailStationRef = ref.child(stationID);
                     DatabaseReference newContributedItem = trailStationRef.push();
                     newContributedItem.setValue(ci);
+                    //add one more contribute to the participant items
+                    DatabaseReference Ref = FirebaseDatabase.getInstance().
+                            getReference("participant-items").child(uid).child(stationID);
+                    DatabaseReference newParticipantItem = Ref.push();
+                    newParticipantItem.setValue(ci);
 
-//                    final String ci_Firebase_key = newContributedItem.getKey();
                     String ci_Firebase_key = newContributedItem.getKey();
                     String local_uri_string = local_uri.toString();
 
                     new UploadFileTask(ci).execute(ci_Firebase_key, local_uri_string, stationID);
 
-
-//                    // upload file to Firebase Cloud
-//                    StorageReference catRef = mStorageRef.child(ci_Firebase_key);
-//                    catRef.putFile(local_uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-//                        @Override
-//                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-//                            Uri firebase_uri = taskSnapshot.getDownloadUrl();
-//
-//                            ci.setFileURL(firebase_uri.toString());
-//
-//                            String FirebaseLocation = "items/" + stationID + "/" + ci_Firebase_key + "/fileURL";
-//                            FirebaseDatabase database = FirebaseDatabase.getInstance();
-//                            DatabaseReference ref = database.getReference(FirebaseLocation);
-//                            ref.setValue(firebase_uri.toString());
-//
-//                            finish();
-//                        }
-//                    }).addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception exception) {
-//                            // Handle unsuccessful uploads
-//                            // ...
-//                        }
-//                    });
                 }
 
 
@@ -360,9 +324,16 @@ public class AddNewItemActivity extends AppCompatActivity {
                     ci.setFileURL(firebase_uri.toString());
 
                     String FirebaseLocation = "items/" + stationID + "/" + ci_Firebase_key + "/fileURL";
+                    //save in the items table
                     FirebaseDatabase database = FirebaseDatabase.getInstance();
                     DatabaseReference ref = database.getReference(FirebaseLocation);
                     ref.setValue(firebase_uri.toString());
+
+                    //save in the participant items table
+                    String uid=FirebaseAuth.getInstance().getUid();
+                    String participant_location="participant-items/"+uid+"/"+stationID+ "/" + ci_Firebase_key + "/fileURL";
+                    DatabaseReference ref_participant=database.getReference(participant_location);
+                    ref_participant.setValue(firebase_uri.toString());
 
                     mProgressDialog.dismiss();
 

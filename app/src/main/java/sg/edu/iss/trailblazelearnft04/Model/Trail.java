@@ -9,13 +9,54 @@ import java.util.Map;
 
 public class Trail {
 
-    public String trailName;
-    public String trailDate;
-    public String timestamp;
-    public String trailId;
-    public String key;
+    private String trailName;
+    private String trailDate;
+    private String timestamp;
+    private String trailId;
+    private String key;
+
+    public String getTrailName() {
+        return trailName;
+    }
+
+    public void setTrailName(String trailName) {
+        this.trailName = trailName;
+    }
+
+    public String getTrailDate() {
+        return trailDate;
+    }
+
+    public void setTrailDate(String trailDate) {
+        this.trailDate = trailDate;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getTrailId() {
+        return trailId;
+    }
+
+    public void setTrailId(String trailId) {
+        this.trailId = trailId;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
 
     public Trail(){
+
 
     }
 
