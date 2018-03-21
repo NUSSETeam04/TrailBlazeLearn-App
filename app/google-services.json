@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "191365233602",
+    "firebase_url": "https://trailblazelearnft04-1adcb.firebaseio.com",
+    "project_id": "trailblazelearnft04-1adcb",
+    "storage_bucket": "trailblazelearnft04-1adcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:191365233602:android:92b854428c80ecb2",
+        "android_client_info": {
+          "package_name": "sg.edu.iss.trailblazelearnft04"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "191365233602-3ino1ad0khhvga35817l268udsr612pi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sg.edu.iss.trailblazelearnft04",
+            "certificate_hash": "73e701b38857ce4ff728d00e1e9dece0221a402b"
+          }
+        },
+        {
+          "client_id": "191365233602-jj61n3dugf4kc8ar9l4247el8ac9vbuq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3glq8KbwMDsGwPAFFBQQnz9Il5rvKLoM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "191365233602-jj61n3dugf4kc8ar9l4247el8ac9vbuq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
