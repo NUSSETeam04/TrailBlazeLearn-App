@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TrailBlazeLearnFT04</string>
+    <string name="app_name">TrailBlazeLearn</string>
     <string name="title_trail_list">Learning Trail List</string>
     <string name="title_station_list">Trail Station List</string>
     <string name="title_new_trail">New Learning Trail</string>
