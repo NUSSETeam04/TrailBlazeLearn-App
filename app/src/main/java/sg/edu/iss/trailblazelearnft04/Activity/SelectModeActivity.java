@@ -74,7 +74,7 @@ public class SelectModeActivity extends AppCompatActivity implements View.OnClic
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         tv = findViewById(R.id.user);
-        tv.setText("Welcome, " + user.getDisplayName());
+        tv.setText(user.getDisplayName());
         Log.i("tag", user.getUid());
 
 
