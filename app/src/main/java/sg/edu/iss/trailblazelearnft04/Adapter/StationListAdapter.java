@@ -212,7 +212,7 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
 
             }
         });
-        builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
