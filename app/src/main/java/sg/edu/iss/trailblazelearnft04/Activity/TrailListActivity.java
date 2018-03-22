@@ -62,10 +62,12 @@ public class TrailListActivity extends AppCompatActivity {
         trailListAdapter = new TrailListAdapter(trailList,false);
         rvTrailList.setAdapter(trailListAdapter);
 
+        //show trail list
         trailHelperDao = new TrailHelperDao();
         trailHelperDao.getTrailsForTrainer(uid, rvTrailList, trailListAdapter, tvEmptyTrailList);
 
         fabAddTrail = findViewById(R.id.fab_add_trail);
+        //add new trail
         fabAddTrail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

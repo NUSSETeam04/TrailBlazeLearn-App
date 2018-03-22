@@ -63,7 +63,7 @@ public class ParticipantTrailActivity extends AppCompatActivity {
         tvEmptyTrailList = findViewById(R.id.tv_empty_participant_list);
         trailListAdapter = new ParticipantTrailListAdapter(trailList,false);
         rvTrailList.setAdapter(trailListAdapter);
-
+        //show a list of participant trail
         participantTrailHelperDao = new ParticipantTrailHelperDao();
         participantTrailHelperDao.getTrailsForParticipant(uid, rvTrailList, trailListAdapter, tvEmptyTrailList);
 

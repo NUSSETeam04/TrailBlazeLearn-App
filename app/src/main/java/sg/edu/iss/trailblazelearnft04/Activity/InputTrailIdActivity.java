@@ -41,6 +41,7 @@ public class InputTrailIdActivity extends AppCompatActivity {
         inputId=findViewById(R.id.inputID);
         addButton =findViewById(R.id.addTrail);
 
+        //participant a new trail
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,6 +55,7 @@ public class InputTrailIdActivity extends AppCompatActivity {
                     query.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            //save this trail in participant-trail
                             if (dataSnapshot.getChildrenCount() == 1) {
                                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                                     String key = childSnapshot.getKey();
@@ -63,6 +65,7 @@ public class InputTrailIdActivity extends AppCompatActivity {
 
                                 }
                             }
+                            //if the trail id doesn't exist
                             if (dataSnapshot.getChildrenCount() == 0) {
                                 AlertDialog.Builder builder=new AlertDialog.Builder(context);
                                 builder.setTitle("Invalid trailId");

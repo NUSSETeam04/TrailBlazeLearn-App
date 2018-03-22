@@ -43,7 +43,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+//This file is for add a new contribute item
 public class AddNewItemActivity extends AppCompatActivity {
     private Button btnSave;
     private Button btnChooseFile;
@@ -99,12 +99,12 @@ public class AddNewItemActivity extends AppCompatActivity {
         });
 
 
-        //////////
+        //create a firebase reference
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref = database.getReference("items");
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
-        //////////
+
 
 
         final String userID = uid;
@@ -119,7 +119,7 @@ public class AddNewItemActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //save item in database
                 Uri local_uri = AddNewItemActivity.this.fileUri;
                 if(local_uri == null){
                     System.out.println("invalid file");
@@ -168,6 +168,7 @@ public class AddNewItemActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                //take photo
                 dialog.dismiss();
                 File dirphoneFile=new File(Environment.getExternalStorageDirectory(),"pictures");
                 photoFile=new File(dirphoneFile,System.currentTimeMillis() + ".jpg");
@@ -181,6 +182,7 @@ public class AddNewItemActivity extends AppCompatActivity {
         choosefile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //choose a exist file in phone
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
                 intent.setType("*/*");
                 String[] mimetypes = {"image/*", "audio/*", "application/pdf", "application/msword"};
@@ -218,6 +220,7 @@ public class AddNewItemActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
             case 1001:
+                //save the exist file
                 if (resultCode == RESULT_OK) {
                     Uri uri = data.getData();
                     this.fileUri = uri;
@@ -247,7 +250,7 @@ public class AddNewItemActivity extends AppCompatActivity {
                 }
                 break;
             case 1:
-
+                //save the photo we take
                 Uri uri = Uri.fromFile(photoFile);
                 this.fileUri = uri;
 
@@ -279,6 +282,7 @@ public class AddNewItemActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
+    //use async task to upload file to the database
     private class UploadFileTask extends AsyncTask<String, Integer, String> {
         private ContributedItem ci;
         ProgressDialog  mProgressDialog;
@@ -360,7 +364,7 @@ public class AddNewItemActivity extends AppCompatActivity {
             });
             return "finish uploading";
         }
-
+        //show the progress update
         @Override
         protected void onProgressUpdate(Integer... progress) {
             super.onProgressUpdate(progress);

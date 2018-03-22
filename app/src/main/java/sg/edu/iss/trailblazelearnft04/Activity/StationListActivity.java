@@ -61,12 +61,14 @@ public class StationListActivity extends AppCompatActivity {
         rvStationList.setAdapter(stationListAdapter);
 
         stationHelperDao = new StationHelperDao();
+        //show a list of station
         stationHelperDao.getStationListForTrainer(key, rvStationList, stationListAdapter, tvEmptyStationList);
 
         fabAddStation = findViewById(R.id.fab_add_station);
         fabAddStation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //add a new station
                 Intent intent = new Intent(StationListActivity.this, AddNewStationActivity.class);
                 intent.putExtra("key",key);
                 intent.putExtra("flag",0);

@@ -47,7 +47,7 @@ public class AddNewStationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_new_station);
         intent = getIntent();
         flag = intent.getIntExtra("flag", 0);
-
+        //initialize the view
         et_stationName = (EditText) findViewById(R.id.et_station_name);
         tv_stationLocation = (TextView) findViewById(R.id.tv_station_address);
         et_instruction = (EditText) findViewById(R.id.et_station_instruction);
@@ -56,10 +56,12 @@ public class AddNewStationActivity extends AppCompatActivity {
 
 
         if (flag == 0) {
+            //flag=0 means we want to create a new station
             this.setTitle(R.string.title_new_station);
             seqNo = intent.getIntExtra("seqNo",0);
 
         } else if (flag == 1) {
+            //flag==1 means we want to edit a exist station
             this.setTitle(R.string.title_edit_station);
             seqNo = intent.getIntExtra("seqNo",0);
             stationName = intent.getStringExtra("stationName");
@@ -92,10 +94,12 @@ public class AddNewStationActivity extends AppCompatActivity {
 
     public boolean isValid() {
         boolean isValid = true;
+        //station name can not be null
         if (TextUtils.isEmpty(et_stationName.getText().toString().trim())) {
             et_stationName.setError("Please enter station name");
             isValid = false;
         }
+        //station location can not be null
         if (TextUtils.isEmpty(tv_stationLocation.getText().toString().trim())) {
             tv_stationLocation.setError("Please pick a location");
             isValid = false;
@@ -110,6 +114,7 @@ public class AddNewStationActivity extends AppCompatActivity {
     public void save() {
 
         if (flag == 0) {
+            //for create a new station we need a new key
             String key = getTrailKey();
             HashMap<String, Double> location = new HashMap<>();
             location.put("latitude", gps.latitude);
@@ -118,6 +123,7 @@ public class AddNewStationActivity extends AppCompatActivity {
             stationHelperDao.addNewStation(seqNo,key, et_stationName.getText().toString(), location, address, et_instruction.getText().toString());
         }
         if (flag == 1) {
+            //edit a station get the exist key
             String key = getTrailKey();
             String stationKey = intent.getStringExtra("stationKey");
             stationHelperDao = new StationHelperDao();
