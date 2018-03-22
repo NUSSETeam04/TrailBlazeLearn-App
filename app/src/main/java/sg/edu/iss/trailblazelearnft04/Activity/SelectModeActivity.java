@@ -60,7 +60,7 @@ public class SelectModeActivity extends AppCompatActivity implements View.OnClic
             @Override
             public void onItemSelected(AdapterView<?> arg0, View arg1,
                                        int arg2, long arg3) {
-                // TODO Auto-generated method stub
+                // select a mode
                 select = ((TextView) arg1).getText().toString();
 
 
@@ -119,9 +119,11 @@ public class SelectModeActivity extends AppCompatActivity implements View.OnClic
 
         Log.i("tag", select);
         if (select == "Trainer") {
+            //select trainer mode
             Intent i = new Intent(SelectModeActivity.this, TrailListActivity.class);
             startActivity(i);
         } else if (select == "Participant") {
+            //select participant mode
             startActivity(new Intent(SelectModeActivity.this, ParticipantTrailActivity.class));
         } else {
             Toast.makeText(v.getContext(), " Please select a mode !", Toast.LENGTH_LONG).show();

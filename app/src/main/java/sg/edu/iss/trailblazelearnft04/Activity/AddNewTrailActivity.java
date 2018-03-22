@@ -79,7 +79,7 @@ public class AddNewTrailActivity extends AppCompatActivity {
         }
 
 
-
+        //create a firebase reference
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         tv_date.setInputType(InputType.TYPE_NULL);
@@ -135,10 +135,12 @@ public class AddNewTrailActivity extends AppCompatActivity {
         name=tv_name.getText().toString();
         trailId=tv_date.getText().toString()+"-"+name;
 
+        //trail name can not be null
         if(TextUtils.isEmpty(tv_name.getText().toString().trim())){
             tv_name.setError("Please enter the trail name");
             isValid=false;
         }
+        //trail date can not be null
         if(TextUtils.isEmpty(tv_date.getText().toString().trim())){
             tv_date.setError("Please select a date");
             isValid=false;

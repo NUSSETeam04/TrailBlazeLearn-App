@@ -54,7 +54,7 @@ public class EditTrailListActivity extends AppCompatActivity {
         trailListManager = new LinearLayoutManager(this);
         rvTrailList.setLayoutManager(trailListManager);
 
-
+        //show the list of learn trail
         trailListAdapter = new TrailListAdapter(trailList,true);
         rvTrailList.setAdapter(trailListAdapter);
 
@@ -65,6 +65,7 @@ public class EditTrailListActivity extends AppCompatActivity {
         fabAddTrail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //edit a learn trail
                 int flag=0;
                 Intent intent=new Intent(EditTrailListActivity.this,AddNewTrailActivity.class);
                 intent.putExtra("flag",0);

@@ -65,7 +65,7 @@ public class EditStationActivity extends AppCompatActivity {
 
         intent = getIntent();
         key = intent.getStringExtra("key");
-
+        //show the list of station
         stationListAdapter = new StationListAdapter(stationList, true, key);
         rvStationList.setAdapter(stationListAdapter);
 
@@ -77,6 +77,7 @@ public class EditStationActivity extends AppCompatActivity {
         fabAddStation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //add a new learn trail
                 int flag=0;
                 Intent intent=new Intent(EditStationActivity.this,AddNewStationActivity.class);
                 intent.putExtra("key",key);

@@ -72,6 +72,7 @@ public class StationPostActivity extends AppCompatActivity {
         postListAdapter = new PostListAdapter(postList);
         rvPostList.setAdapter(postListAdapter);
 
+        //show stationpost
         stationPostHelperDao = new StationPostHelperDao();
         stationPostHelperDao.getPostList(discussionId, postListAdapter, rvPostList);
 
@@ -80,6 +81,7 @@ public class StationPostActivity extends AppCompatActivity {
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //create a new post
                 String post = etNewPost.getText().toString();
                 Date date = new Date(System.currentTimeMillis());
                 String postTimestamp = formatter.format(date);

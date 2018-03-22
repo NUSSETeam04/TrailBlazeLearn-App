@@ -33,6 +33,7 @@ public class StationDetailActivity extends AppCompatActivity {
         String stationId=intent.getStringExtra("stationId");
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+        //create pager adapter to show three fragment
         TabPagerAdapter pagerAdapter = new TabPagerAdapter(getSupportFragmentManager(), 3 , trailKey,stationId);
         viewPager.setAdapter(pagerAdapter);
 

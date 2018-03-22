@@ -59,7 +59,7 @@ public class ParticipantStationListActivity extends AppCompatActivity {
         intent.putExtra("key",key);
 
         tvEmptyStationList = findViewById(R.id.tv_empty_station_list);
-
+        //show a list of participant station
         stationListAdapter = new ParticipantStationListAdapter(stationList,false, key);
         rvStationList.setAdapter(stationListAdapter);
 
