@@ -52,16 +52,16 @@ public class StationHelperDao {
         });
     }
 
-    public void addNewStation(String key, String et_stationName, HashMap<String,Double> location, String address, String et_instruction) {
+    public void addNewStation(int seqNo,String key, String et_stationName, HashMap<String,Double> location, String address, String et_instruction) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         String stationKey = mDatabase.child(key).push().getKey();
-        Station station = new Station(et_stationName, location, address, et_instruction, stationKey);
+        Station station = new Station(seqNo,et_stationName, location, address, et_instruction, stationKey);
         mDatabase.child("stations/" + key).child(stationKey).setValue(station);
     }
 
-    public void updateStation(String key, String stationKey, String et_stationName, HashMap<String,Double> location, String address, String et_instruction) {
+    public void updateStation(int seqNo,String key, String stationKey, String et_stationName, HashMap<String,Double> location, String address, String et_instruction) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        Station station = new Station(et_stationName, location, address,et_instruction, stationKey);
+        Station station = new Station(seqNo,et_stationName, location, address,et_instruction, stationKey);
         mDatabase.child("stations/" + key).child(stationKey).setValue(station);
     }
 

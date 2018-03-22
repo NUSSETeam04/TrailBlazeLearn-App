@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,19 +19,15 @@ import sg.edu.iss.trailblazelearnft04.Activity.StationDetailActivity;
 import sg.edu.iss.trailblazelearnft04.DBDao.StationHelperDao;
 import sg.edu.iss.trailblazelearnft04.Model.Station;
 import sg.edu.iss.trailblazelearnft04.R;
-import sg.edu.iss.trailblazelearnft04.Util.ItemTouchHelperAdapter;
-import sg.edu.iss.trailblazelearnft04.Util.ItemTouchHelperViewHolder;
-import sg.edu.iss.trailblazelearnft04.Util.OnStartDragListener;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 /**
  * Created by mia on 04/03/18.
  */
 
 
-public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.ViewHolder> implements ItemTouchHelperAdapter {
+public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.ViewHolder> {
 
 
     private ArrayList<Station> myDataSet=new ArrayList<Station>();
@@ -42,41 +37,10 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
     private Station station;
     private Intent intent;
     private  int position;
-    private final OnStartDragListener mDragStartListener;
-    private OnItemClickListener mItemClickListener;
     private StationHelperDao stationHelperDao;
 
-    @Override
-    public boolean onItemMove(int fromPosition, int toPosition) {
-        System.out.print("from:"+fromPosition+" to position"+toPosition);
-        if (fromPosition < myDataSet.size() && toPosition < myDataSet.size()) {
-            if (fromPosition < toPosition) {
-                for (int i = fromPosition; i < toPosition; i++) {
-                    Collections.swap(myDataSet, i, i + 1);
-                }
-            } else {
-                for (int i = fromPosition; i > toPosition; i--) {
-                    Collections.swap(myDataSet, i, i - 1);
-                }
-            }
-            notifyItemMoved(fromPosition, toPosition);
-        }
-        return true;
-    }
 
-    public void updateStationList(ArrayList<Station> stationList) {
-        myDataSet = stationList;
-        notifyDataSetChanged();
-
-    }
-
-    @Override
-    public void onItemDismiss(int position) {
-        myDataSet.remove(position);
-        notifyItemRemoved(position);
-    }
-
-    public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, ItemTouchHelperViewHolder {
+    public  class ViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         private TextView tvStationName;
         private TextView tvStationSequence;
@@ -103,29 +67,13 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
 
         }
 
-        @Override
-        public void onClick(View view) {
-            if (mItemClickListener != null) {
-                mItemClickListener.onItemClick(view, position);
-            }
-        }
-
-        @Override
-        public void onItemSelected() {
-            itemView.setBackgroundColor(Color.LTGRAY);
-        }
-
-        @Override
-        public void onItemClear() {
-            itemView.setBackgroundColor(0);
-        }
     }
 
-    public StationListAdapter(ArrayList<Station> stationList, boolean editable, String key, OnStartDragListener dragListner) {
+    public StationListAdapter(ArrayList<Station> stationList, boolean editable, String key) {
         myDataSet = stationList;
         this.editable = editable;
         this.key=key;
-        mDragStartListener = dragListner;
+
     }
 
     @Override
@@ -174,7 +122,8 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
                     intent.putExtra("lati",station.getGps().get("latitude"));
                     intent.putExtra("longi",station.getGps().get("longitude"));
                     intent.putExtra("key",key);
-
+                    int seqNo = getItemCount();
+                    intent.putExtra("seqNo",seqNo);
                     context.startActivity(intent);
                 }
             });
@@ -228,16 +177,10 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
         return myDataSet.size();
     }
 
+    public void updateStationList(ArrayList<Station> stationList) {
+        myDataSet = stationList;
+        notifyDataSetChanged();
 
-    public interface OnItemClickListener {
-        public void onItemClick(View view, int position);
     }
-
-    public void setOnItemClickListener(final OnItemClickListener mItemClickListener) {
-        this.mItemClickListener = mItemClickListener;
-    }
-
-
-
 
 }

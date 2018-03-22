@@ -7,18 +7,15 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import sg.edu.iss.trailblazelearnft04.Adapter.EditItemTouchHelperCallback;
 import sg.edu.iss.trailblazelearnft04.Adapter.StationListAdapter;
 import sg.edu.iss.trailblazelearnft04.DBDao.StationHelperDao;
 import sg.edu.iss.trailblazelearnft04.Model.Station;
 import sg.edu.iss.trailblazelearnft04.R;
-import sg.edu.iss.trailblazelearnft04.Util.OnStartDragListener;
 
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -29,7 +26,7 @@ import com.google.android.gms.tasks.Task;
 
 import java.util.ArrayList;
 
-public class StationListActivity extends AppCompatActivity implements OnStartDragListener {
+public class StationListActivity extends AppCompatActivity {
     private RecyclerView rvStationList;
     private StationListAdapter stationListAdapter;
     private RecyclerView.LayoutManager stationListManager;
@@ -39,8 +36,6 @@ public class StationListActivity extends AppCompatActivity implements OnStartDra
     private StationHelperDao stationHelperDao;
     private ArrayList<Station> stationList = new ArrayList<Station>();
 
-    OnStartDragListener dragListener;
-    ItemTouchHelper mItemTouchHelper;
     String key;
     Intent intent;
 
@@ -62,16 +57,11 @@ public class StationListActivity extends AppCompatActivity implements OnStartDra
         key = intent.getStringExtra("key");
         intent.putExtra("key",key);
 
-        stationListAdapter = new StationListAdapter(stationList, false, key, dragListener);
+        stationListAdapter = new StationListAdapter(stationList, false, key);
         rvStationList.setAdapter(stationListAdapter);
 
         stationHelperDao = new StationHelperDao();
         stationHelperDao.getStationListForTrainer(key, rvStationList, stationListAdapter, tvEmptyStationList);
-
-        ItemTouchHelper.Callback callback = new EditItemTouchHelperCallback(stationListAdapter);
-
-        mItemTouchHelper = new ItemTouchHelper(callback);
-        mItemTouchHelper.attachToRecyclerView(rvStationList);
 
         fabAddStation = findViewById(R.id.fab_add_station);
         fabAddStation.setOnClickListener(new View.OnClickListener() {
@@ -80,15 +70,14 @@ public class StationListActivity extends AppCompatActivity implements OnStartDra
                 Intent intent = new Intent(StationListActivity.this, AddNewStationActivity.class);
                 intent.putExtra("key",key);
                 intent.putExtra("flag",0);
+                int seqNo = stationListAdapter.getItemCount();
+                intent.putExtra("seqNo",seqNo);
                 startActivity(intent);
             }
         });
 
     }
-    @Override
-    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
-        mItemTouchHelper.startDrag(viewHolder);
-    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

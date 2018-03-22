@@ -66,7 +66,7 @@ public class EditStationActivity extends AppCompatActivity {
         intent = getIntent();
         key = intent.getStringExtra("key");
 
-        stationListAdapter = new StationListAdapter(stationList, true, key, null);
+        stationListAdapter = new StationListAdapter(stationList, true, key);
         rvStationList.setAdapter(stationListAdapter);
 
         stationHelperDao = new StationHelperDao();
@@ -81,6 +81,9 @@ public class EditStationActivity extends AppCompatActivity {
                 Intent intent=new Intent(EditStationActivity.this,AddNewStationActivity.class);
                 intent.putExtra("key",key);
                 intent.putExtra("flag",0);
+                int seqNo = stationListAdapter.getItemCount();
+                intent.putExtra("seqNo",seqNo);
+                intent.putExtra("seqNo",seqNo);
                 startActivity(intent);
             }
         });

@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import sg.edu.iss.trailblazelearnft04.R;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -35,7 +37,7 @@ public class SelectModeActivity extends AppCompatActivity implements View.OnClic
     private Button button;
     private String select;
     private GoogleSignInClient mGoogleSignInClient;
-    private static final String[] mode = {"Select Mode", "Trainer", "Participant"};
+    private static final String[] mode = {"<Select Mode>", "Trainer", "Participant"};
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -122,6 +124,7 @@ public class SelectModeActivity extends AppCompatActivity implements View.OnClic
         } else if (select == "Participant") {
             startActivity(new Intent(SelectModeActivity.this, ParticipantTrailActivity.class));
         } else {
+            Toast.makeText(v.getContext(), " Please select a mode !", Toast.LENGTH_LONG).show();
 
         }
     }

@@ -29,7 +29,7 @@ public class AddNewStationActivity extends AppCompatActivity {
     private EditText et_stationName;
     private TextView tv_stationLocation;
     private EditText et_instruction;
-    private int flag;
+    private int flag,seqNo;
     private String stationName, instructions, address;
     private Intent intent;
     private GoogleMap map;
@@ -57,9 +57,11 @@ public class AddNewStationActivity extends AppCompatActivity {
 
         if (flag == 0) {
             this.setTitle(R.string.title_new_station);
+            seqNo = intent.getIntExtra("seqNo",0);
 
         } else if (flag == 1) {
             this.setTitle(R.string.title_edit_station);
+            seqNo = intent.getIntExtra("seqNo",0);
             stationName = intent.getStringExtra("stationName");
             address = intent.getStringExtra("location");
             instructions = intent.getStringExtra("instructions");
@@ -113,13 +115,13 @@ public class AddNewStationActivity extends AppCompatActivity {
             location.put("latitude", gps.latitude);
             location.put("longitude", gps.longitude);
             stationHelperDao = new StationHelperDao();
-            stationHelperDao.addNewStation(key, et_stationName.getText().toString(), location, address, et_instruction.getText().toString());
+            stationHelperDao.addNewStation(seqNo,key, et_stationName.getText().toString(), location, address, et_instruction.getText().toString());
         }
         if (flag == 1) {
             String key = getTrailKey();
             String stationKey = intent.getStringExtra("stationKey");
             stationHelperDao = new StationHelperDao();
-            stationHelperDao.updateStation(key, stationKey, et_stationName.getText().toString(), location, address, et_instruction.getText().toString());
+            stationHelperDao.updateStation(seqNo,key, stationKey, et_stationName.getText().toString(), location, address, et_instruction.getText().toString());
         }
     }
 

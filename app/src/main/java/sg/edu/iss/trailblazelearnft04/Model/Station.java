@@ -20,8 +20,8 @@ public class Station {
     public Station() {
     }
 
-    public Station(String stationName, HashMap<String,Double> gps, String address, String instructions,String stationKey) {
-        // this.sequence = sequence;
+    public Station(int sequence,String stationName, HashMap<String,Double> gps, String address, String instructions,String stationKey) {
+        this.sequence = sequence;
         this.stationName = stationName;
         this.gps.putAll(gps);
         this.address=address;
