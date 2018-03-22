@@ -1,0 +1,508 @@
+{
+  "discussions" : {
+    "-L87mq23rYBKFrxu5pzT" : {
+      "-L87o3drGmDeahzb1by9" : {
+        "discussionId" : "-L87o3drGmDeahzb1by9",
+        "timestamp" : "20180321 13:47:13",
+        "topic" : "When is the last date to submit report",
+        "userId" : "x3riRwdgGNgHFkY9SI3eD6wz0312"
+      },
+      "-L87zxJmsxiLE7xa90Ea" : {
+        "discussionId" : "-L87zxJmsxiLE7xa90Ea",
+        "timestamp" : "20180321 22:39:08",
+        "topic" : "How can we go there",
+        "userId" : "jYFfMcgqDuPI1X16ykLY7nzXRS92"
+      }
+    },
+    "-L87npcLYMRPk9I42l9U" : {
+      "-L87nxsSQn_cDfxOezkq" : {
+        "discussionId" : "-L87nxsSQn_cDfxOezkq",
+        "timestamp" : "20180321 21:46:45",
+        "topic" : "Welcome to this trail! Hope you can have fun here",
+        "userId" : "jYFfMcgqDuPI1X16ykLY7nzXRS92"
+      }
+    },
+    "-L87pipTFVOqXr-FXF7J" : {
+      "-L87rWeCpqcuWW7Goquw" : {
+        "discussionId" : "-L87rWeCpqcuWW7Goquw",
+        "timestamp" : "20180320 23:09:52",
+        "topic" : "Great fun!",
+        "userId" : "1nEAV3eBSqNTnesg7LgyVlX7bTt1"
+      },
+      "-L87rnfpcsjOKGFh-yJG" : {
+        "discussionId" : "-L87rnfpcsjOKGFh-yJG",
+        "timestamp" : "20180320 23:11:06",
+        "topic" : "Everyone looks happy",
+        "userId" : "1nEAV3eBSqNTnesg7LgyVlX7bTt1"
+      }
+    },
+    "-L87qtfmofsxo445EYv7" : {
+      "-L87r2gsEGrTO7N641Wj" : {
+        "discussionId" : "-L87r2gsEGrTO7N641Wj",
+        "timestamp" : "20180321 22:00:15",
+        "topic" : "You can discuss everything in this thread",
+        "userId" : "jYFfMcgqDuPI1X16ykLY7nzXRS92"
+      }
+    }
+  },
+  "items" : {
+    "-L87mq23rYBKFrxu5pzT" : {
+      "-L87zmrz90QMQVZjL4tx" : {
+        "description" : "Good weather",
+        "fileType" : "image",
+        "fileURL" : "https://firebasestorage.googleapis.com/v0/b/trailblazelearnft04-1adcb.appspot.com/o/-L87zmrz90QMQVZjL4tx?alt=media&token=d0b524d7-ed97-4c30-aa83-67521963d5ac",
+        "timeCreation" : "20180321 22:38:00",
+        "userId" : "jYFfMcgqDuPI1X16ykLY7nzXRS92"
+      }
+    },
+    "-L87niWSKV37I8c_yTXL" : {
+      "-L87sjk0I011naH823ec" : {
+        "description" : "Number of computers found!",
+        "fileType" : "image",
+        "fileURL" : "https://firebasestorage.googleapis.com/v0/b/trailblazelearnft04-1adcb.appspot.com/o/-L87sjk0I011naH823ec?alt=media&token=8d4e7d49-7783-40f9-a5f7-78d57ccdc0cb",
+        "timeCreation" : "20180321 22:07:20",
+        "userId" : "44o3QxMMMNSLuvWpfQq00gAwlUT2"
+      }
+    }
+  },
+  "participant-items" : {
+    "44o3QxMMMNSLuvWpfQq00gAwlUT2" : {
+      "-L87niWSKV37I8c_yTXL" : {
+        "-L87sjk0I011naH823ec" : {
+          "fileURL" : "https://firebasestorage.googleapis.com/v0/b/trailblazelearnft04-1adcb.appspot.com/o/-L87sjk0I011naH823ec?alt=media&token=8d4e7d49-7783-40f9-a5f7-78d57ccdc0cb"
+        },
+        "-L87sjk40NMJ4ZkH3zYC" : {
+          "description" : "Number of computers found!",
+          "fileType" : "image",
+          "fileURL" : "NA",
+          "timeCreation" : "20180321 22:07:20",
+          "userId" : "44o3QxMMMNSLuvWpfQq00gAwlUT2"
+        }
+      }
+    },
+    "jYFfMcgqDuPI1X16ykLY7nzXRS92" : {
+      "-L87mq23rYBKFrxu5pzT" : {
+        "-L87zmrz90QMQVZjL4tx" : {
+          "fileURL" : "https://firebasestorage.googleapis.com/v0/b/trailblazelearnft04-1adcb.appspot.com/o/-L87zmrz90QMQVZjL4tx?alt=media&token=d0b524d7-ed97-4c30-aa83-67521963d5ac"
+        },
+        "-L87zms7HXLvCbuO7L7q" : {
+          "description" : "Good weather",
+          "fileType" : "image",
+          "fileURL" : "NA",
+          "timeCreation" : "20180321 22:38:00",
+          "userId" : "jYFfMcgqDuPI1X16ykLY7nzXRS92"
+        }
+      }
+    }
+  },
+  "participant-trails" : {
+    "44o3QxMMMNSLuvWpfQq00gAwlUT2" : {
+      "-L87mVfcTZTG6G_prfMo" : {
+        "key" : "-L87mVfcTZTG6G_prfMo",
+        "timestamp" : "20180321 21:40:03",
+        "trailDate" : "20180321",
+        "trailId" : "20180321-Trail NUS",
+        "trailName" : "Trail NUS"
+      }
+    },
+    "jYFfMcgqDuPI1X16ykLY7nzXRS92" : {
+      "-L87mVfcTZTG6G_prfMo" : {
+        "key" : "-L87mVfcTZTG6G_prfMo",
+        "timestamp" : "20180321 21:40:03",
+        "trailDate" : "20180321",
+        "trailId" : "20180321-Trail NUS",
+        "trailName" : "Trail NUS"
+      }
+    },
+    "x3riRwdgGNgHFkY9SI3eD6wz0312" : {
+      "-L87mVfcTZTG6G_prfMo" : {
+        "key" : "-L87mVfcTZTG6G_prfMo",
+        "timestamp" : "20180321 21:40:03",
+        "trailDate" : "20180321",
+        "trailId" : "20180321-Trail NUS",
+        "trailName" : "Trail NUS"
+      }
+    }
+  },
+  "posts" : {
+    "-L87o3drGmDeahzb1by9" : {
+      "-L87oQMFpWTVU2-CgwU_" : {
+        "post" : "By tomorrow 22/03/2018  should submit the reports!",
+        "timestamp" : "20180321 21:48:49",
+        "userId" : "44o3QxMMMNSLuvWpfQq00gAwlUT2"
+      },
+      "-L87qy-6-c_9UTQqI9Lc" : {
+        "post" : "Ok Thanks",
+        "timestamp" : "20180321 13:59:52",
+        "userId" : "x3riRwdgGNgHFkY9SI3eD6wz0312"
+      }
+    }
+  },
+  "stations" : {
+    "-L87mDinKf5ExHx0UpVu" : {
+      "-L87mZHmkhlFTRWo9SFK" : {
+        "address" : "Institute of Systems Science\n25 Heng Mui Keng Terrace, Singapore 119615",
+        "gps" : {
+          "latitude" : 1.2922479999999998,
+          "longitude" : 103.77661099999999
+        },
+        "instructions" : "Go to the guard and then take a photo of the gate",
+        "sequence" : 0,
+        "stationKey" : "-L87mZHmkhlFTRWo9SFK",
+        "stationName" : "The first floor"
+      },
+      "-L87mvhZcAzPTE_y2w3h" : {
+        "address" : "Institute of Systems Science\n25 Heng Mui Keng Terrace, Singapore 119615",
+        "gps" : {
+          "latitude" : 1.2922479999999998,
+          "longitude" : 103.77661099999999
+        },
+        "instructions" : "Have some coffee and visit the classroom",
+        "sequence" : 0,
+        "stationKey" : "-L87mvhZcAzPTE_y2w3h",
+        "stationName" : "The second floor"
+      },
+      "-L87npcLYMRPk9I42l9U" : {
+        "address" : "Institute of Systems Science\n25 Heng Mui Keng Terrace, Singapore 119615",
+        "gps" : {
+          "latitude" : 1.2922479999999998,
+          "longitude" : 103.77661099999999
+        },
+        "instructions" : "Go and visit the classroom",
+        "sequence" : 0,
+        "stationKey" : "-L87npcLYMRPk9I42l9U",
+        "stationName" : "The third floor"
+      }
+    },
+    "-L87mVfcTZTG6G_prfMo" : {
+      "-L87mq23rYBKFrxu5pzT" : {
+        "address" : "University Health Centre\n20 Lower Kent Ridge Rd, Singapore 119080",
+        "gps" : {
+          "latitude" : 1.2991034,
+          "longitude" : 103.7763985
+        },
+        "instructions" : "Go to Health Center\nSubmit your reports",
+        "sequence" : 0,
+        "stationKey" : "-L87mq23rYBKFrxu5pzT",
+        "stationName" : "Health Center"
+      },
+      "-L87n4uhtMr8eVPUXy7D" : {
+        "address" : "Techno Edge\n2 Engineering Drive 4, Singapore 117584",
+        "gps" : {
+          "latitude" : 1.2978376999999996,
+          "longitude" : 103.77158809999999
+        },
+        "instructions" : "Click photos of food stalls  which serve low calorie food.",
+        "sequence" : 0,
+        "stationKey" : "-L87n4uhtMr8eVPUXy7D",
+        "stationName" : "Techno Edge"
+      },
+      "-L87niWSKV37I8c_yTXL" : {
+        "address" : "Institute of Systems Science\n25 Heng Mui Keng Terrace, Singapore 119615",
+        "gps" : {
+          "latitude" : 1.2922479999999998,
+          "longitude" : 103.77661099999999
+        },
+        "instructions" : "Go to Discussion room and count the laptops",
+        "sequence" : 0,
+        "stationKey" : "-L87niWSKV37I8c_yTXL",
+        "stationName" : "ISS"
+      }
+    },
+    "-L87p2v-QIyNHGXLDkpa" : {
+      "-L87pipTFVOqXr-FXF7J" : {
+        "address" : "Universal Studios Singapore\n8 Sentosa Gateway, Singapore 098269",
+        "gps" : {
+          "latitude" : 1.2540421,
+          "longitude" : 103.82380839999999
+        },
+        "instructions" : "Go there\nEnjoy your time\nObserve how happy people are\n",
+        "sequence" : 0,
+        "stationKey" : "-L87pipTFVOqXr-FXF7J",
+        "stationName" : "Universal Studios Sinapore"
+      },
+      "-L87qikdYHToJSuB0z5P" : {
+        "address" : "S.E.A. Aquarium\n8 Sentosa Gateway, Resorts World Sentosa, Singapore 098269",
+        "gps" : {
+          "latitude" : 1.258305,
+          "longitude" : 103.82047
+        },
+        "instructions" : "Observe sea animals\nObserve how people and sea animals live in harmony\n",
+        "sequence" : 0,
+        "stationKey" : "-L87qikdYHToJSuB0z5P",
+        "stationName" : "SEA Aquarium"
+      },
+      "-L87r6UdmSoWbenVzcXu" : {
+        "address" : "Wings Of Time\nBeach View, Sentosa, Singapore 098604",
+        "gps" : {
+          "latitude" : 1.2511681,
+          "longitude" : 103.81695669999999
+        },
+        "instructions" : "Enjoy the performance of technology\n",
+        "sequence" : 0,
+        "stationKey" : "-L87r6UdmSoWbenVzcXu",
+        "stationName" : "Wings Of Time"
+      },
+      "-L87rLRVMQXZYc9gajnV" : {
+        "address" : "Sentosa Merlion\n30 Imbiah Rd, Singapore 099705",
+        "gps" : {
+          "latitude" : 1.2533952,
+          "longitude" : 103.8188847
+        },
+        "instructions" : "Visit another Merlion in Singapore",
+        "sequence" : 0,
+        "stationKey" : "-L87rLRVMQXZYc9gajnV",
+        "stationName" : "Sentosa Merlion"
+      },
+      "-L87t2LA528rRM4XWO4C" : {
+        "address" : "iFly\n#01 Sentosa Island, 43 Siloso Beach Walk, 01, Singapore 099010",
+        "gps" : {
+          "latitude" : 1.2520497,
+          "longitude" : 103.8175808
+        },
+        "instructions" : "Try iFly (Very exciting!)\n",
+        "sequence" : 0,
+        "stationKey" : "-L87t2LA528rRM4XWO4C",
+        "stationName" : "iFly Singapore"
+      }
+    },
+    "-L87pFHsUEXoLVQgzrQM" : {
+      "-L87pVJ8-lkLISIRhArr" : {
+        "address" : "West Coast Crescent\nW Coast Cres, Singapore",
+        "gps" : {
+          "latitude" : 1.2982574,
+          "longitude" : 103.7655604
+        },
+        "instructions" : "Go and find westcoast park",
+        "sequence" : 0,
+        "stationKey" : "-L87pVJ8-lkLISIRhArr",
+        "stationName" : "Westcoast"
+      },
+      "-L87qeVeo41Fs-ZvYXrj" : {
+        "address" : "East Coast Park\nE Coast Park Service Rd, Singapore 449876",
+        "gps" : {
+          "latitude" : 1.3007842,
+          "longitude" : 103.9121866
+        },
+        "instructions" : "Go to east coast park and take a photo",
+        "sequence" : 0,
+        "stationKey" : "-L87qeVeo41Fs-ZvYXrj",
+        "stationName" : "Eastcoast"
+      },
+      "-L87qtfmofsxo445EYv7" : {
+        "address" : "East Coast Park\nE Coast Park Service Rd, Singapore 449876",
+        "gps" : {
+          "latitude" : 1.3007842,
+          "longitude" : 103.9121866
+        },
+        "instructions" : "Go swimming and surfing",
+        "sequence" : 0,
+        "stationKey" : "-L87qtfmofsxo445EYv7",
+        "stationName" : "Surfing"
+      }
+    },
+    "-L87pSp3ic1_TMC90WL4" : {
+      "-L87qJNG3K26G5DA4wY9" : {
+        "address" : "West Coast CC\n2 Clementi West Street 2, Singapore 129605",
+        "gps" : {
+          "latitude" : 1.3025689999999999,
+          "longitude" : 103.764943
+        },
+        "instructions" : "Inquire about the membership details and analyze the number of members from past 5 years data.",
+        "sequence" : 0,
+        "stationKey" : "-L87qJNG3K26G5DA4wY9",
+        "stationName" : "West Coast CC"
+      },
+      "-L87qcIhYoPiPBr59_lB" : {
+        "address" : "Sheng Siong\nBlk 720 Clementi West Street 2 #01-144, Singapore 120720",
+        "gps" : {
+          "latitude" : 1.3023342999999998,
+          "longitude" : 103.7637657
+        },
+        "instructions" : "Collect data for price increase in vegetables from last quarter to this quarter",
+        "sequence" : 0,
+        "stationKey" : "-L87qcIhYoPiPBr59_lB",
+        "stationName" : "Sheng Siong"
+      },
+      "-L87rKWzn7wOQY3sx8bL" : {
+        "address" : "Clementi ActiveSG Sports Centre\n518 Clementi Ave 3, Singapore 129907",
+        "gps" : {
+          "latitude" : 1.311086,
+          "longitude" : 103.765029
+        },
+        "instructions" : "Count number of TT tables and demand in peak time. also calculate the waiting time for one particupant.",
+        "sequence" : 0,
+        "stationKey" : "-L87rKWzn7wOQY3sx8bL",
+        "stationName" : "Sports Club"
+      },
+      "-L87sOzQNW8g77Zl21-I" : {
+        "address" : "DBS\n450, Clementi Avenue 3, #01-293/295, Singapore 120450",
+        "gps" : {
+          "latitude" : 1.3134173999999998,
+          "longitude" : 103.7655107
+        },
+        "instructions" : "Ask customer service representative about general waiting time for one customer in peak hours. Also ask them to fill survey about types of counters served in the bank regularly.",
+        "sequence" : 0,
+        "stationKey" : "-L87sOzQNW8g77Zl21-I",
+        "stationName" : "DBS Branch Clementi"
+      }
+    },
+    "-L87rJ67rg_5O9ADks2N" : {
+      "-L87s67btw4buND8bXkE" : {
+        "address" : "UTown Residence\n36 College Ave E, North Tower, Singapore 138600",
+        "gps" : {
+          "latitude" : 1.3052017,
+          "longitude" : 103.7739045
+        },
+        "instructions" : "Go to utown residence and take a photo",
+        "sequence" : 0,
+        "stationKey" : "-L87s67btw4buND8bXkE",
+        "stationName" : "Utown residence"
+      },
+      "-L87sMzitGcVpc1aIytV" : {
+        "address" : "UTown Auditorium 1, NUS\n1 Create Way (S), Singapore 138602",
+        "gps" : {
+          "latitude" : 1.3038885,
+          "longitude" : 103.7737243
+        },
+        "instructions" : "Take photo of utown auditorium",
+        "sequence" : 0,
+        "stationKey" : "-L87sMzitGcVpc1aIytV",
+        "stationName" : "Go to utown auditorium "
+      },
+      "-L87sfkIWGZOchD-BiN3" : {
+        "address" : "University Town, NUS\n2 College Avenue West 01, Stephen Riady Centre, 138607",
+        "gps" : {
+          "latitude" : 1.3046013999999997,
+          "longitude" : 103.7723125
+        },
+        "instructions" : "Find some chinese food ",
+        "sequence" : 0,
+        "stationKey" : "-L87sfkIWGZOchD-BiN3",
+        "stationName" : "Find something to eat"
+      }
+    }
+  },
+  "trails" : {
+    "-L87mDinKf5ExHx0UpVu" : {
+      "key" : "-L87mDinKf5ExHx0UpVu",
+      "timestamp" : "20180321 21:38:30",
+      "trailDate" : "20180321",
+      "trailId" : "20180321-Learn in ISS",
+      "trailName" : "Learn in ISS"
+    },
+    "-L87mVfcTZTG6G_prfMo" : {
+      "key" : "-L87mVfcTZTG6G_prfMo",
+      "timestamp" : "20180321 21:40:03",
+      "trailDate" : "20180321",
+      "trailId" : "20180321-Trail NUS",
+      "trailName" : "Trail NUS"
+    },
+    "-L87p2v-QIyNHGXLDkpa" : {
+      "key" : "-L87p2v-QIyNHGXLDkpa",
+      "timestamp" : "20180320 22:58:51",
+      "trailDate" : "20180321",
+      "trailId" : "20180321-Sentosa",
+      "trailName" : "Sentosa"
+    },
+    "-L87pFHsUEXoLVQgzrQM" : {
+      "key" : "-L87pFHsUEXoLVQgzrQM",
+      "timestamp" : "20180321 21:48:40",
+      "trailDate" : "20180322",
+      "trailId" : "20180322-Go to seaside",
+      "trailName" : "Go to seaside"
+    },
+    "-L87pSp3ic1_TMC90WL4" : {
+      "key" : "-L87pSp3ic1_TMC90WL4",
+      "timestamp" : "20180321 21:52:58",
+      "trailDate" : "20180322",
+      "trailId" : "20180322-Trail Clementi",
+      "trailName" : "Trail Clementi"
+    },
+    "-L87rJ67rg_5O9ADks2N" : {
+      "key" : "-L87rJ67rg_5O9ADks2N",
+      "timestamp" : "20180321 22:00:27",
+      "trailDate" : "20180321",
+      "trailId" : "20180321-Utown",
+      "trailName" : "Utown"
+    }
+  },
+  "trainer-trails" : {
+    "1nEAV3eBSqNTnesg7LgyVlX7bTt1" : {
+      "-L87p2v-QIyNHGXLDkpa" : {
+        "key" : "-L87p2v-QIyNHGXLDkpa",
+        "timestamp" : "20180320 22:58:51",
+        "trailDate" : "20180321",
+        "trailId" : "20180321-Sentosa",
+        "trailName" : "Sentosa"
+      }
+    },
+    "44o3QxMMMNSLuvWpfQq00gAwlUT2" : {
+      "-L87mVfcTZTG6G_prfMo" : {
+        "key" : "-L87mVfcTZTG6G_prfMo",
+        "timestamp" : "20180321 21:40:03",
+        "trailDate" : "20180321",
+        "trailId" : "20180321-Trail NUS",
+        "trailName" : "Trail NUS"
+      },
+      "-L87pSp3ic1_TMC90WL4" : {
+        "key" : "-L87pSp3ic1_TMC90WL4",
+        "timestamp" : "20180321 21:52:58",
+        "trailDate" : "20180322",
+        "trailId" : "20180322-Trail Clementi",
+        "trailName" : "Trail Clementi"
+      }
+    },
+    "jYFfMcgqDuPI1X16ykLY7nzXRS92" : {
+      "-L87mDinKf5ExHx0UpVu" : {
+        "key" : "-L87mDinKf5ExHx0UpVu",
+        "timestamp" : "20180321 21:38:30",
+        "trailDate" : "20180321",
+        "trailId" : "20180321-Learn in ISS",
+        "trailName" : "Learn in ISS"
+      },
+      "-L87pFHsUEXoLVQgzrQM" : {
+        "key" : "-L87pFHsUEXoLVQgzrQM",
+        "timestamp" : "20180321 21:48:40",
+        "trailDate" : "20180322",
+        "trailId" : "20180322-Go to seaside",
+        "trailName" : "Go to seaside"
+      },
+      "-L87rJ67rg_5O9ADks2N" : {
+        "key" : "-L87rJ67rg_5O9ADks2N",
+        "timestamp" : "20180321 22:00:27",
+        "trailDate" : "20180321",
+        "trailId" : "20180321-Utown",
+        "trailName" : "Utown"
+      }
+    }
+  },
+  "users" : {
+    "0chDMDvVc8hB8LQhs8nuDoMeMK52" : {
+      "userName" : "Cloudia Geller"
+    },
+    "1nEAV3eBSqNTnesg7LgyVlX7bTt1" : {
+      "userName" : "Peiyan Zhang"
+    },
+    "44o3QxMMMNSLuvWpfQq00gAwlUT2" : {
+      "userName" : "Neelam Patil."
+    },
+    "A3q9jhUPIrchWtjCmvIkqrQI1g62" : {
+      "email" : "xiaoai0109@gmail.com",
+      "userName" : "李晓艾"
+    },
+    "Q7iz2jf7YGSbWKD8UQYEz08CYFy2" : {
+      "userName" : "Zuxiu Wang"
+    },
+    "RzU8PRS7ImaIVwBg5kng3dCJ1Jq2" : {
+      "email" : "smilingsriraj@gmail.com",
+      "userName" : "Sriraj Thammana"
+    },
+    "jYFfMcgqDuPI1X16ykLY7nzXRS92" : {
+      "userName" : "zuxiu wang"
+    },
+    "x3riRwdgGNgHFkY9SI3eD6wz0312" : {
+      "userName" : "Thammana Sriraj"
+    }
+  }
+}
