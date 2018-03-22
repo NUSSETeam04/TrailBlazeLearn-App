@@ -5,13 +5,39 @@ package sg.edu.iss.trailblazelearnft04.Model;
  */
 
 public class Post {
-    public String userId;
-    public String post;
-    public String timestamp;
-    public Post(){}
+
+    private String userId;
+    private String post;
+    private String timestamp;
+    public Post(){
+    }
     public Post(String userId, String post, String timestamp){
         this.userId=userId;
         this.post=post;
         this.timestamp=timestamp;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getPost() {
+        return post;
+    }
+
+    public void setPost(String post) {
+        this.post = post;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }

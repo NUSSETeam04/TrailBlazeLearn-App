@@ -25,20 +25,20 @@ public class PostTest {
     public void testUserID()
     {
         Post testPost = new Post("ABC1", "This is a new Post", "20181121");
-        assertEquals(post.userId,testPost.userId );
+        assertEquals(post.getUserId(),testPost.getUserId() );
 
     }
 
     @Test
     public void testPost() {
         Post testPost = new Post("ABC1", "This is a new Post", "20181121");
-        assertEquals(post.post,testPost.post );
+        assertEquals(post.getPost(),testPost.getPost() );
     }
 
     @Test
     public void testDescription() {
         Post testPost = new Post("ABC1", "This is a new Post", "20181121");
-        assertEquals(post.timestamp,testPost.timestamp );
+        assertEquals(post.getTimestamp(),testPost.getTimestamp() );
     }
 
 

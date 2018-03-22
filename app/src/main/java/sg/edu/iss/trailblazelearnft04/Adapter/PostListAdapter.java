@@ -50,10 +50,10 @@ public class PostListAdapter extends RecyclerView.Adapter<PostListAdapter.ViewHo
     @Override
     public void onBindViewHolder(final PostListAdapter.ViewHolder viewHolder, final int position) {
 
-        String userId=myDataSet.get(position).userId;
+        String userId=myDataSet.get(position).getUserId();
 
-        viewHolder.tvPost.setText(myDataSet.get(position).post);
-        viewHolder.tvCreatedDate.setText(myDataSet.get(position).timestamp);
+        viewHolder.tvPost.setText(myDataSet.get(position).getPost());
+        viewHolder.tvCreatedDate.setText(myDataSet.get(position).getTimestamp());
 
         UserHelperDao userHelperDao = new UserHelperDao();
         userHelperDao.setUserNameByUserId(userId, viewHolder.tvUserName);

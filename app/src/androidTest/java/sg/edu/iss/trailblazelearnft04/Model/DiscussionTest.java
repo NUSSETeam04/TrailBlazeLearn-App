@@ -25,25 +25,25 @@ public class DiscussionTest {
     public void testUserID()
     {
         Discussion testDiscussion = new Discussion("ABC1","Android","20180321 13:47:13","discussion1");
-        assertEquals(discussion.userId,testDiscussion.userId );
+        assertEquals(discussion.getUserId(),testDiscussion.getUserId() );
 
     }
 
     @Test
     public void testTopic() {
         Discussion testDiscussion = new Discussion("ABC1","Android","20180321 13:47:13","discussion1");
-        assertEquals(discussion.topic,testDiscussion.topic );
+        assertEquals(discussion.getTopic(),testDiscussion.getTopic() );
     }
 
     @Test
     public void testTimestamp() {
         Discussion testDiscussion = new Discussion("ABC1","Android","20180321 13:47:13","discussion1");
-        assertEquals(discussion.timestamp,testDiscussion.timestamp );
+        assertEquals(discussion.getTimestamp(),testDiscussion.getTimestamp() );
     }
 
     @Test
     public void testDiscussionID() {
         Discussion testDiscussion = new Discussion("ABC1","Android","20180321 13:47:13","discussion1");
-        assertEquals(discussion.discussionId,testDiscussion.discussionId );
+        assertEquals(discussion.getDiscussionId(),testDiscussion.getDiscussionId() );
     }
 }

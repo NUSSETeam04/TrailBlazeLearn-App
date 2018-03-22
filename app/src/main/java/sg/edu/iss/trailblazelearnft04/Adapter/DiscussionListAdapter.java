@@ -61,10 +61,10 @@ public class DiscussionListAdapter extends RecyclerView.Adapter<DiscussionListAd
 
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder,final int position) {
-        viewHolder.tvDiscussionTopic.setText(myDataSet.get(position).topic);
+        viewHolder.tvDiscussionTopic.setText(myDataSet.get(position).getTopic());
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users");
 
-        String uid=myDataSet.get(position).userId;
+        String uid=myDataSet.get(position).getUserId();
 
         ref.child(uid).addValueEventListener(new ValueEventListener() {
             @Override
@@ -88,18 +88,18 @@ public class DiscussionListAdapter extends RecyclerView.Adapter<DiscussionListAd
                 Discussion discussion=myDataSet.get(position);
 
                 Intent intent = new Intent(context, StationPostActivity.class);
-                intent.putExtra("discussionTopic",myDataSet.get(position).topic);
-                intent.putExtra("userId",myDataSet.get(position).userId);
-                intent.putExtra("timestamp",myDataSet.get(position).timestamp);
-                intent.putExtra("discussionId",myDataSet.get(position).discussionId);
-                Log.i("tag",myDataSet.get(position).discussionId);
+                intent.putExtra("discussionTopic",myDataSet.get(position).getTopic());
+                intent.putExtra("userId",myDataSet.get(position).getUserId());
+                intent.putExtra("timestamp",myDataSet.get(position).getTimestamp());
+                intent.putExtra("discussionId",myDataSet.get(position).getDiscussionId());
+                Log.i("tag",myDataSet.get(position).getDiscussionId());
                 intent.putExtra("stationName", context.getTitle());
                 context.startActivity(intent);
 
             }
         });
 
-        viewHolder.tvCreatedDate.setText((myDataSet.get(position).timestamp).toString());
+        viewHolder.tvCreatedDate.setText((myDataSet.get(position).getTimestamp()).toString());
     }
 
     @Override

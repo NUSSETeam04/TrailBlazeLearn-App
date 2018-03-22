@@ -8,10 +8,12 @@ import java.util.Map;
  */
 
 public class Discussion {
-    public String userId;
-    public String topic;
-    public String timestamp;
-    public String discussionId;
+
+
+    private String userId;
+    private String topic;
+    private String timestamp;
+    private String discussionId;
 
     public Discussion(){
 
@@ -30,5 +32,37 @@ public class Discussion {
         result.put("timestamp", timestamp);
         result.put("discussionId",discussionId);
         return result;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getDiscussionId() {
+        return discussionId;
+    }
+
+    public void setDiscussionId(String discussionId) {
+        this.discussionId = discussionId;
     }
 }
