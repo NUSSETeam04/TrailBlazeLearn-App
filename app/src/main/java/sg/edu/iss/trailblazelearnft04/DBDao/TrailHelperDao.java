@@ -26,6 +26,7 @@ import sg.edu.iss.trailblazelearnft04.Model.Trail;
 public class TrailHelperDao {
     private DatabaseReference mDatabase;
 
+    // Get trail list for a trainer from firebase
     public void getTrailsForTrainer(final String uid, final RecyclerView rvTrailList,
                                     final TrailListAdapter trailListAdapter, final TextView tvEmptyTrailList) {
 
@@ -53,6 +54,7 @@ public class TrailHelperDao {
         });
     }
 
+    // Add new trail to firebase
     public void addNewTrail(String name, String date, String timestamp, String trailId, String key, String uid) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         Trail trail = new Trail(name, date, timestamp, trailId, key);
@@ -65,6 +67,7 @@ public class TrailHelperDao {
         mDatabase.updateChildren(childUpdates);
     }
 
+    // Update trail in firebase
     public void updateTrail(String name, String date, String timestamp, String trailId, final String key, String uid) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         Trail trail = new Trail(name, date, timestamp, trailId, key);
@@ -95,6 +98,7 @@ public class TrailHelperDao {
         });
     }
 
+    // Delete trail from firebase
     public void deleteTrail(Trail trail, final String uid) {
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
         String trailId = trail.getTrailId();
@@ -142,6 +146,7 @@ public class TrailHelperDao {
 
     }
 
+    // Get all the existing trail id from firebase
     public void getExistingTrailId(final ArrayList<String> existingTrailId) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         String temp_ref = "trails/";

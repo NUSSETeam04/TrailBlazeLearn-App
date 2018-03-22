@@ -41,7 +41,6 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
 
 
     public  class ViewHolder extends RecyclerView.ViewHolder {
-        // each data item is just a string in this case
         private TextView tvStationName;
         private TextView tvStationSequence;
         private ImageView ivUploaded;
@@ -56,7 +55,6 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
             tvStationName = (TextView) v.findViewById(R.id.tv_station_name);
             tvStationSequence = (TextView) v.findViewById(R.id.tv_station_sequence);
             ivUploaded = (ImageView) v.findViewById(R.id.iv_uploaded);
-            // now just use iv_up to instead the whole button, should be an whole ImageButton
             btnAdjustUp = (ImageButton) v.findViewById(R.id.iv_up);
             btnAdjustDown = (ImageButton) v.findViewById(R.id.iv_down);
             this.key=key;
@@ -93,6 +91,7 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
 
         Resources res = viewHolder.itemView.getContext().getResources();
         final Context context = viewHolder.itemView.getContext();
+        // In edit mode, to delete the station
         if(editable) {
             btnDeleteStation = (ImageButton) viewHolder.itemView.findViewById(R.id.btn_delete_station);
             btnDeleteStation.setVisibility(View.VISIBLE);
@@ -104,19 +103,17 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
                     Log.i("tag", String.valueOf(position));
                 }
             });
+
+            // In edit mode, to update the station
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    //DatabaseReference ref= FirebaseDatabase.getInstance().getReference();
                     station=myDataSet.get(position);
                     intent = new Intent(context, AddNewStationActivity.class);
-                    //intent.putExtra("trailId",key[0]);
-                    System.out.println("station name"+station.getStationName());
                     intent.putExtra("flag",1);
                     intent.putExtra("stationName",station.getStationName());
                     intent.putExtra("location",station.getAddress());
-                    System.out.println("location:"+station.getAddress());
                     intent.putExtra("instructions",station.getInstructions());
                     intent.putExtra("stationKey",station.getStationKey());
                     intent.putExtra("lati",station.getGps().get("latitude"));
@@ -130,7 +127,7 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
 
         }
         if (! editable) {
-            // btnAdjust & btnDeleteStation is invisible now
+
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -148,6 +145,7 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
         }
     }
 
+    // Alert dialog to ensure the deletion of station
     public void alert(Context context, final int position) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Delete");
@@ -172,6 +170,7 @@ public class StationListAdapter extends RecyclerView.Adapter<StationListAdapter.
         AlertDialog dialog= builder.create();
         dialog.show();
     }
+
     @Override
     public int getItemCount() {
         return myDataSet.size();

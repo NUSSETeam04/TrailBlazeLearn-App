@@ -93,7 +93,6 @@ public class ParticipantTrailListAdapter extends RecyclerView.Adapter<Participan
 
     @Override
     public int getItemCount() {
-        //return myDataSet==null ? 0 : myDataSet.size();
         return  myDataSet.size();
     }
 

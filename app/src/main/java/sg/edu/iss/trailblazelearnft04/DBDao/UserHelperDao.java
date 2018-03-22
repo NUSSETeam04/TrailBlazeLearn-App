@@ -16,10 +16,12 @@ import sg.edu.iss.trailblazelearnft04.Model.User;
  */
 
 public class UserHelperDao {
+    // Get current user id
     public static String getUid() {
         return FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
+    // Set the user name by user id
     public void setUserNameByUserId(String userId, final TextView tvUserName) {
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("users");
 

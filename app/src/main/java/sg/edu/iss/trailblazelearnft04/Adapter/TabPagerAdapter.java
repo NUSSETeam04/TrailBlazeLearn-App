@@ -26,6 +26,7 @@ public class TabPagerAdapter extends FragmentStatePagerAdapter {
         this.stationId=stationId;
     }
 
+    // Launch different fragment by tap different tabs
     @Override
     public Fragment getItem(int position) {
         switch (position) {

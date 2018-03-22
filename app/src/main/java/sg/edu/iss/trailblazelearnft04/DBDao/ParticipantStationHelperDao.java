@@ -21,7 +21,8 @@ import java.util.ArrayList;
 
 public class ParticipantStationHelperDao {
     private DatabaseReference mDatabase;
-    //to get participant list for a participant
+
+    // Get station list for a participant from firebase
     public void getStationListForParticipant(final String key, final RecyclerView rvStationList, final ParticipantStationListAdapter stationListAdapter,
                                              final TextView tvEmptyStationList) {
         mDatabase= FirebaseDatabase.getInstance().getReference("stations");
@@ -33,7 +34,7 @@ public class ParticipantStationHelperDao {
                     Station station=child.getValue(Station.class);
                     stationList.add(station);
                 }
-//                key = intent.getStringExtra("key");
+
                 stationListAdapter.updateDataSet(stationList);
                 rvStationList.setAdapter(stationListAdapter);
 

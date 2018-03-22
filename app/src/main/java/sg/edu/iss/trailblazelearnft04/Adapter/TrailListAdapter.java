@@ -30,7 +30,6 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
 
     private ArrayList<Trail> myDataSet=new ArrayList<>();
     private boolean editable;
-//    private Context context;
     private String trailId;
     private Trail trail;
     private Intent intent;
@@ -49,7 +48,6 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
             tvTrailName = (TextView) v.findViewById(R.id.tv_trail_name);
             tvTrailId = (TextView) v.findViewById(R.id.tv_trail_id);
             tvTrailDate = (TextView) v.findViewById(R.id.tv_trail_date);
-//            btnDeleteTrail = (ImageButton) v.findViewById(R.id.btn_delete_trail);
 
         }
     }
@@ -82,9 +80,9 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
         viewHolder.tvTrailDate.setText(myDataSet.get(position).getTrailDate());
         final Context context = viewHolder.itemView.getContext();
         if (editable){
+            // In edit mode, to delete the trail
             ImageButton btnDeleteTrail = (ImageButton) viewHolder.itemView.findViewById(R.id.btn_delete_trail);
             btnDeleteTrail.setVisibility(View.VISIBLE);
-            //delete a learning trail
             btnDeleteTrail.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -93,21 +91,18 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
                 }
             });
 
-            //update trail
+            // In edit mode, to update the trail
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     trail = myDataSet.get(position);
-//                    String Id=trail.trailDate+"-"+trail.trailName;
                     intent = new Intent(context, AddNewTrailActivity.class);
-                    //intent.putExtra("trailId",key[0]);
 
                     intent.putExtra("flag",1);
                     intent.putExtra("trailName",trail.getTrailName());
                     intent.putExtra("trailDate",trail.getTrailDate());
                     intent.putExtra("timestamp",trail.getTimestamp());
                     intent.putExtra("key",trail.getKey());
-                    //intent.putExtra("trailId",trail.trailDate+"-"+trail.trailName);
                     context.startActivity(intent);
 
                 }
@@ -132,10 +127,10 @@ public class TrailListAdapter extends RecyclerView.Adapter<TrailListAdapter.View
 
     @Override
     public int getItemCount() {
-        //return myDataSet==null ? 0 : myDataSet.size();
         return  myDataSet.size();
     }
 
+    // Alert dialog to ensure the deletion of trail
     public void alert(Context context, final int position){
         AlertDialog.Builder builder=new AlertDialog.Builder(context);
         builder.setTitle("Delete");

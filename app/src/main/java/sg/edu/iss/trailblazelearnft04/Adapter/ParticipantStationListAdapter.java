@@ -74,17 +74,12 @@ public class ParticipantStationListAdapter extends RecyclerView.Adapter<Particip
     public void onBindViewHolder(final ViewHolder viewHolder, final int position) {
         viewHolder.tvStationName.setText(myDataSet.get(position).getStationName());
         viewHolder.tvStationSequence.setText(String.valueOf(position+1));
-        // If user is trainer, ivUploaded should be invisible
-        // viewholder.ivUploaded.setVisibility(View.GONE); if user is trainer
 
-        // Change the image if this participant have uploaded contributed item for this station
-        // Now just randomly pick the image according to position, should be implemented correctly
-        // The image of "√" should be changed to a nicer picture, find it in Layout item_station_list
         final Resources res = viewHolder.itemView.getContext().getResources();
         final Context context = viewHolder.itemView.getContext();
 
+        // Launch StationDetailActivity from participant mode
         if (! editable) {
-            // btnAdjust & btnDeleteStation is invisible now
             viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -101,6 +96,7 @@ public class ParticipantStationListAdapter extends RecyclerView.Adapter<Particip
             });
         }
 
+        // Display a click for a station which the participant has uploaded items
         Station station=myDataSet.get(position);
         String stationkey=station.getStationKey();
         String uid= FirebaseAuth.getInstance().getUid();

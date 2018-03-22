@@ -30,7 +30,6 @@ import sg.edu.iss.trailblazelearnft04.Model.User;
 
 public class DiscussionListAdapter extends RecyclerView.Adapter<DiscussionListAdapter.ViewHolder>  {
 
-
     private ArrayList<Discussion> myDataSet=new ArrayList<>();
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -99,7 +98,6 @@ public class DiscussionListAdapter extends RecyclerView.Adapter<DiscussionListAd
 
             }
         });
-        //Log.i("tag11", username[0]);
 
         viewHolder.tvCreatedDate.setText((myDataSet.get(position).timestamp).toString());
     }

@@ -28,6 +28,7 @@ public class StationInfoHelperDao implements OnMapReadyCallback {
     private GoogleMap map;
     private Station station;
 
+    // Get station info from firebase
     public void getStationInfo(String trailKey, String stationName, final TextView tvStationName,
                                final SupportMapFragment mapFragment, final TextView tv_station_instruction,
                                final TextView tv_station_address) {
@@ -61,7 +62,7 @@ public class StationInfoHelperDao implements OnMapReadyCallback {
         });
     }
 
-
+    // Get the location from google map
     @Override
     public void onMapReady(GoogleMap googleMap) {
 

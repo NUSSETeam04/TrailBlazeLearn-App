@@ -22,6 +22,7 @@ import java.util.ArrayList;
 public class ParticipantTrailHelperDao {
     private DatabaseReference mDatabase;
 
+    // Get trail list for a participant from firebase
     public void getTrailsForParticipant(final String uid, final RecyclerView rvTrailList,
                                         final ParticipantTrailListAdapter trailListAdapter, final TextView tvEmptyTrailList) {
         mDatabase = FirebaseDatabase.getInstance().getReference("participant-trails");

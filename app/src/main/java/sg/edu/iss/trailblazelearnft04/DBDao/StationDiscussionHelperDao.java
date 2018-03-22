@@ -6,7 +6,6 @@ import android.widget.TextView;
 
 import sg.edu.iss.trailblazelearnft04.Adapter.DiscussionListAdapter;
 import sg.edu.iss.trailblazelearnft04.Model.Discussion;
-import sg.edu.iss.trailblazelearnft04.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +20,7 @@ import java.util.ArrayList;
 
 public class StationDiscussionHelperDao {
 
+    // Get discussion list from firebase
     public void getDiscussionList(final String stationId, final DiscussionListAdapter discussionListAdapter,
                                   final RecyclerView rvDiscussionList, final TextView tvEmptyDiscussionList) {
         DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReference("discussions");
@@ -49,6 +49,7 @@ public class StationDiscussionHelperDao {
         });
     }
 
+    // Add new discussion to firebase
     public void addNewDiscussion(String stationId, String uid, String topic, String discussionTimestamp) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("discussions");
         String discussionKey = ref.child(stationId).push().getKey();

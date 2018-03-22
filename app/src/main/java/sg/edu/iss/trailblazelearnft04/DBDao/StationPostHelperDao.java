@@ -18,6 +18,7 @@ import sg.edu.iss.trailblazelearnft04.Model.Post;
  */
 
 public class StationPostHelperDao {
+    // Get post list from firebase
     public void getPostList(final String discussionId, final PostListAdapter postListAdapter, final RecyclerView rvPostList) {
         DatabaseReference mDatabase= FirebaseDatabase.getInstance().getReference("posts");
         mDatabase.addValueEventListener(new ValueEventListener() {
@@ -40,6 +41,7 @@ public class StationPostHelperDao {
         });
     }
 
+    // Add new post to firebase
     public void addNewPost(String discussionId, String uid, String post, String postTimestamp) {
         DatabaseReference ref= FirebaseDatabase.getInstance().getReference("posts");
         String postId=ref.child(discussionId).push().getKey();

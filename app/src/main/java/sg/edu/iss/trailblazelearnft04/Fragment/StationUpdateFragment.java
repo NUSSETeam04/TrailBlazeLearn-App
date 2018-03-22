@@ -31,7 +31,6 @@ public class StationUpdateFragment extends Fragment {
     private ArrayList<ContributedItem> ContributedItemList;
 
     public StationUpdateFragment() {
-        // Required empty public constructor
     }
 
     @Override
@@ -47,15 +46,14 @@ public class StationUpdateFragment extends Fragment {
         // Inflate the layout for this fragment
         final View fragmentView = inflater.inflate(R.layout.fragment_station_update, container, false);
 
-        // modify this according to context
         final String userID = uid;
-        //final String stationID = "-L7XDL5ditoY4_Dr0BWG";
 
         Bundle bundle = this.getArguments();
         String stationID =bundle.getString("stationId");
 
         ContributedItemList = new ArrayList<ContributedItem>();
 
+        // Get contributed item list from firebase
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         String temp_ref = "items/" + stationID;
         DatabaseReference ref = database.getReference(temp_ref);

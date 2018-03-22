@@ -39,7 +39,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
     private Context context;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // just static data now
         private ImageView ivFile;
         private TextView tvParticipantName;
         private TextView tvDescription;
@@ -68,7 +67,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
                     String fileKey = fileKeyAndAuth_split[0];
 
                     String localFile_path = context.getExternalCacheDir() + fileKey + "." + ContributedItem_Type;
-                    Log.i("tag pa",localFile_path);
                     final File localFile = new File(localFile_path);
                     if(!localFile.exists()) {
 
@@ -118,7 +116,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
                 mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 // Show ProgressBar
                 mProgressDialog.setCancelable(false);
-                //  mProgressDialog.setCanceledOnTouchOutside(false);
                 mProgressDialog.show();
             }
 
@@ -201,12 +198,12 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ItemListAdapter.ViewHolder viewHolder, int position) {
-        // ivFile set Thumbnail for each file according to its file type (not implemented yet)
         viewHolder.tvDescription.setText(myDataSet.get(position).getDescription());
+
         UserHelperDao userhelper=new UserHelperDao();
         String uid= myDataSet.get(position).getUserId();
         userhelper.setUserNameByUserId(uid,viewHolder.tvParticipantName);
-        //viewHolder.tvParticipantName.setText(myDataSet.get(position).getUserName());
+
         viewHolder.tvCreatedDate.setText(myDataSet.get(position).getTimeCreation());
         if (myDataSet.get(position).getFileType().equals("image")) {
             String fileURL = myDataSet.get(position).getFileURL();
@@ -219,7 +216,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
             final File localFile = new File(this.context.getExternalCacheDir(), fileKey + ".jpg");
             if(localFile.exists()){
                 try {
-                    //Bitmap myBitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                     Bitmap bitmap=getImageThumbnail(localFile.getAbsolutePath(),65,65);
                     viewHolder.ivFile.setImageBitmap(bitmap);
                 } catch (OutOfMemoryError e){
@@ -236,7 +232,6 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
                         // Successfully downloaded data to local file
                         // View relevant file
                         try {
-                            //Bitmap myBitmap = BitmapFactory.decodeFile(localFile.getAbsolutePath());
                             Bitmap myBitmap=getImageThumbnail(localFile.getAbsolutePath(),65,65);
                             viewHolder.ivFile.setImageBitmap(myBitmap);
                             viewHolder.ivFile.setImageBitmap(myBitmap);
@@ -271,13 +266,14 @@ public class ItemListAdapter extends RecyclerView.Adapter<ItemListAdapter.ViewHo
         return myDataSet.size();
     }
 
-    public Bitmap getImageThumbnail(String uri,int width,int height){ //获取缩略图
+    // Get image thumbnail
+    public Bitmap getImageThumbnail(String uri,int width,int height){
         Bitmap bitmap=null;
         BitmapFactory.Options options=new BitmapFactory.Options();
         options.inJustDecodeBounds=true;
         bitmap=BitmapFactory.decodeFile(uri,options);
         options.inJustDecodeBounds=false;
-        int beWidth=options.outWidth/width; //缩略图宽度
+        int beWidth=options.outWidth/width;
         int beHeight=options.outHeight/height;
         int be=1;
         if(beWidth<beHeight){

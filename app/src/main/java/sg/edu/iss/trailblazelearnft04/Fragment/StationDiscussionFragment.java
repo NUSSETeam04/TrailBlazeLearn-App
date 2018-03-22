@@ -51,7 +51,6 @@ public class StationDiscussionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         final View fragmentView = inflater.inflate(R.layout.fragment_station_discussion, container, false);
 
         rvDiscussionList = (RecyclerView) fragmentView.findViewById(R.id.discussion_list);
@@ -69,12 +68,15 @@ public class StationDiscussionFragment extends Fragment {
 
         tvEmptyDiscussionList = fragmentView.findViewById(R.id.tv_empty_discussion);
 
+        // Get Discussion List from Firebase
         stationDiscussionHelperDao = new StationDiscussionHelperDao();
         stationDiscussionHelperDao.getDiscussionList(stationId, discussionListAdapter, rvDiscussionList, tvEmptyDiscussionList);
 
 
         btnPost = fragmentView.findViewById(R.id.btn_post);
         etNewDiscussion = fragmentView.findViewById(R.id.et_discussion);
+
+        // Add a new discussion
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,6 +84,7 @@ public class StationDiscussionFragment extends Fragment {
                 Date date = new Date(System.currentTimeMillis());
                 String discussionTimestamp = formatter.format(date);
 
+                // If there is no topic of discussion, error message below will be displayed
                 if (topic.isEmpty()){
                     etNewDiscussion.setError("Say something");
                 } else {

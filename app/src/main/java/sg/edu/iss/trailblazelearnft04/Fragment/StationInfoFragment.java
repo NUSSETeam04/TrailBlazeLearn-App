@@ -59,7 +59,7 @@ public class StationInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        // Inflate the layout for this fragment
         final View fragmentView = inflater.inflate(R.layout.fragment_station_info, container, false);
         Bundle bundle = this.getArguments();
         String trailKey =bundle.getString("trailKey");
@@ -74,10 +74,12 @@ public class StationInfoFragment extends Fragment {
         stationName = getActivity().getTitle().toString();
         tvStationName.setText(stationName);
 
+        // Get station info from firebase
         stationInfoHelperDao = new StationInfoHelperDao();
         stationInfoHelperDao.getStationInfo(trailKey, stationName, tvStationName, mapFragment, tv_station_instruction, tv_station_address);
 
 
+        // Upload new contributed item
         btnUpload = (Button) fragmentView.findViewById(R.id.btn_upload);
         btnUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,13 +91,10 @@ public class StationInfoFragment extends Fragment {
             }
         });
 
-
-        // modify this according to context
-        final String userID = uid;
-        //final String stationID = "-L7XDL5ditoY4_Dr0BWG";
-
         ContributedItemList = new ArrayList<ContributedItem>();
 
+        // Upload the contributed item to firebase
+        final String userID = uid;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         String temp_ref = "items/" + stationID;
         DatabaseReference ref = database.getReference(temp_ref);
@@ -110,7 +109,6 @@ public class StationInfoFragment extends Fragment {
                     }
                 }
 
-                // use ListView / RecyclerView to display the Uploaded Items (Not implemented yet)
                 rvMyItemList = (RecyclerView) fragmentView.findViewById(R.id.my_item_list);
                 rvMyItemList.setHasFixedSize(false);
 

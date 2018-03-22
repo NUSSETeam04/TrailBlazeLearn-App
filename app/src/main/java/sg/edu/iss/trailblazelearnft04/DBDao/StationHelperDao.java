@@ -28,6 +28,7 @@ import sg.edu.iss.trailblazelearnft04.Model.Station;
 public class StationHelperDao {
     private DatabaseReference mDatabase;
 
+    // Get station list for a trainer from firebase
     public void getStationListForTrainer(final String key, final RecyclerView rvStationList,
                                          final StationListAdapter stationListAdapter, final TextView tvEmptyStationList) {
         mDatabase= FirebaseDatabase.getInstance().getReference("stations");
@@ -52,6 +53,7 @@ public class StationHelperDao {
         });
     }
 
+    // Add new station to firebase
     public void addNewStation(int seqNo,String key, String et_stationName, HashMap<String,Double> location, String address, String et_instruction) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         String stationKey = mDatabase.child(key).push().getKey();
@@ -59,12 +61,14 @@ public class StationHelperDao {
         mDatabase.child("stations/" + key).child(stationKey).setValue(station);
     }
 
+    // Update station in firebase
     public void updateStation(int seqNo,String key, String stationKey, String et_stationName, HashMap<String,Double> location, String address, String et_instruction) {
         mDatabase = FirebaseDatabase.getInstance().getReference();
         Station station = new Station(seqNo,et_stationName, location, address,et_instruction, stationKey);
         mDatabase.child("stations/" + key).child(stationKey).setValue(station);
     }
 
+    // Delete station from firebase
     public void deleteStation(final Station station, final String key, final Context context1) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
 
