@@ -33,6 +33,7 @@ public class UserTest {
     public void testEmail() {
         User testUser = new User("asdf123","asdf123@gmail.com");
         assertEquals(testUser.getEmail(),user.getEmail());
+
     }
 
 
