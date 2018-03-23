@@ -6,24 +6,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
 
-import org.mockito.stubbing.Answer;
 import org.powermock.modules.junit4.PowerMockRunner;
 
-import sg.edu.iss.trailblazelearnft04.Activity.MainActivity;
+
 import sg.edu.iss.trailblazelearnft04.Model.User;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-import static org.mockito.Mockito.doAnswer;
+
 import static org.mockito.Mockito.when;
 
 /**
@@ -50,7 +47,7 @@ public class UserHelperDaoTest {
         mockedDatabaseReference = Mockito.mock(DatabaseReference.class);
 
         FirebaseDatabase mockedFirebaseDatabase = Mockito.mock(FirebaseDatabase.class);
-      //  when(mockedFirebaseDatabase.getReference()).thenReturn(mockedDatabaseReference);
+
        when(dataSnapshot.getValue(User.class)).thenReturn(expectedUser);
 
     }
